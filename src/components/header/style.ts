@@ -18,8 +18,8 @@ type FullComponentType = {
 export const HeaderContainer = styled.header<HeaderType>`
   font-weight: normal;
   padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10vw;
+  padding-right: 10vw;
   width: 100%;
   position: fixed;
   top: 0;
@@ -31,9 +31,13 @@ export const HeaderContainer = styled.header<HeaderType>`
     props.isSticky ? theme.colors.background_secondary : "transparent"};
   box-shadow: ${(props) =>
     props.isSticky ? "0 1px 2px rgba(0, 0, 0, 0.08)" : "0 0 0"};
-  @media (min-width: ${theme.breakpoints.LG}px) {
-    padding-left: 12.5vw;
-    padding-right: 12.5vw;
+  @media (max-width: ${theme.breakpoints.XXL}px) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  @media (max-width: ${theme.breakpoints.XL}px) {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
     padding-left: 10px;
@@ -67,7 +71,7 @@ export const Detail = styled.div`
 `;
 
 export const FullScreenComponent = styled.div<FullComponentType>`
-  @media (max-width: ${theme.breakpoints.SM - 1}px) {
+  @media (max-width: ${theme.breakpoints.LG - 1}px) {
     display: none;
   }
   display: flex;
@@ -133,7 +137,7 @@ export const MobileScreenComponent = styled.div`
     height: 4.5vh;
   }
   align-self: center;
-  @media (min-width: ${theme.breakpoints.SM}px) {
+  @media (min-width: ${theme.breakpoints.LG}px) {
     display: none;
   }
   img {
