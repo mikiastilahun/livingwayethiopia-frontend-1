@@ -51,16 +51,6 @@ export const HeaderContainer = styled.header<HeaderType>`
   }
 `;
 
-export const LogoImage = styled.img`
-  max-height: 3.5vh;
-  cursor: pointer;
-  vertical-align: middle;
-  object-fit: fill;
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    max-height: 4.5vh;
-  }
-`;
-
 export const Logo = styled.div`
   grid-column: 1/2;
   @media (max-width: ${theme.breakpoints.SM}px) {
@@ -138,9 +128,6 @@ export const ButtonNav = styled.div`
     text-transform: capitalize;
     cursor: pointer;
     font-family: ${theme.fonts.body};
-    img {
-      width: 20px;
-    }
   }
 `;
 
@@ -153,9 +140,5 @@ export const MobileScreenComponent = styled.div`
   align-self: center;
   @media (min-width: ${theme.breakpoints.XMd}px) {
     display: none;
-  }
-  img {
-    height: 5vh;
-    align-self: center;
   }
 `;

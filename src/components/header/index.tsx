@@ -3,6 +3,8 @@ import React from 'react';
 import { HeaderContainer, Logo, Detail, FullScreenComponent, MobileScreenComponent, NavLink, ButtonNav } from './style';
 import { useNavBar } from '../../contexts/navbar';
 import LogoContainer from '../logo';
+import Image from "next/image";
+
 
 
 const Header = ({ isSticky }: { isSticky: boolean }) => {
@@ -20,7 +22,9 @@ const Header = ({ isSticky }: { isSticky: boolean }) => {
                                 <div className="border" />
                                 <button className='buttonContainer'>
                                     {data.name}
-                                    <img src="/icons/live.svg" alt="live" />
+                                    <div style={{ width: 20, height: 20 }}>
+                                        <Image width={20} height={20} src="/icons/live.svg" alt="live" />
+                                    </div>
                                 </button>
                             </ButtonNav>
 
@@ -33,9 +37,10 @@ const Header = ({ isSticky }: { isSticky: boolean }) => {
                     })}
                 </FullScreenComponent>
                 <MobileScreenComponent>
-                    <img src="/icons/menu.svg" alt="Menu" onClick={() => {
-                        navbar.updateDrawerView();
-                    }} />
+                    <div>
+                        <Image width={40} height={40} src="/icons/menu.svg" alt="Menu" onClick={() => {
+                            navbar.updateDrawerView();
+                        }} /></div>
                 </MobileScreenComponent>
             </Detail>
         </HeaderContainer>

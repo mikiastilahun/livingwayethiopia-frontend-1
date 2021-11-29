@@ -16,9 +16,9 @@ const Drawer = () => {
                 console.log("inhere")
             }} >
                 <TopDrawerContainer>
-                    <img src="/icons/x.svg" alt="close" onClick={() => {
+                    {/* <img src="/icons/x.svg" alt="close" onClick={() => {
                         navbar.updateDrawerView();
-                    }} />
+                    }} /> */}
                 </TopDrawerContainer>
                 <MidDrawerContainer />
                 <BottomDrawerContainer />
