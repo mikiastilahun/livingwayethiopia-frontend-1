@@ -18,24 +18,30 @@ type FullComponentType = {
 export const HeaderContainer = styled.header<HeaderType>`
   font-weight: normal;
   padding: 10px;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  width: 100%;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   transition: all 0.4s ease;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   color: ${theme.colors.primary};
   background-color: ${(props) =>
     props.isSticky ? theme.colors.background_secondary : "transparent"};
   box-shadow: ${(props) =>
     props.isSticky ? "0 1px 2px rgba(0, 0, 0, 0.08)" : "0 0 0"};
   @media (max-width: ${theme.breakpoints.XXL}px) {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.XL}px) {
     padding-left: 5vw;
     padding-right: 5vw;
   }
-  @media (max-width: ${theme.breakpoints.XL}px) {
+  @media (max-width: ${theme.breakpoints.LG}px) {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
   }
@@ -71,12 +77,11 @@ export const Detail = styled.div`
 `;
 
 export const FullScreenComponent = styled.div<FullComponentType>`
-  @media (max-width: ${theme.breakpoints.LG - 1}px) {
+  @media (max-width: ${theme.breakpoints.XMd - 1}px) {
     display: none;
   }
   display: flex;
   align-items: center;
-  justify-self: flex-end;
 
   .borderContainer {
     height: 40px;
@@ -86,12 +91,15 @@ export const FullScreenComponent = styled.div<FullComponentType>`
     background-color: ${theme.colors.secondary};
     border-radius: 15px;
   }
+  .holder {
+    display: flex;
+  }
 `;
 
 export const NavLink = styled.span<NavLinkType>`
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 14px;
+  margin-left: 12.5px;
+  margin-right: 12.5px;
+  font-size: 13px;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -106,6 +114,7 @@ export const NavLink = styled.span<NavLinkType>`
   font-family: ${theme.fonts.body} -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+  text-transform: uppercase;
 `;
 
 export const ButtonNav = styled.button`
@@ -137,14 +146,11 @@ export const MobileScreenComponent = styled.div`
     height: 4.5vh;
   }
   align-self: center;
-  @media (min-width: ${theme.breakpoints.LG}px) {
+  @media (min-width: ${theme.breakpoints.XMd}px) {
     display: none;
   }
   img {
-    height: 3.5vh;
+    height: 3vh;
     align-self: center;
-    @media (max-width: ${theme.breakpoints.SM}px) {
-      height: 4.5vh;
-    }
   }
 `;

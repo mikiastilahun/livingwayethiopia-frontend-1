@@ -23,7 +23,7 @@ export const MainContainer = styled.div<DrawerViewType>`
   grid-column-end: 10;
   /* justify-items: flex-end; */
   transition: all 0.4s ease;
-  @media (min-width: ${theme.breakpoints.LG}px) {
+  @media (min-width: ${theme.breakpoints.XMd}px) {
     display: none;
   }
 `;
@@ -65,9 +65,8 @@ export const TopDrawerContainer = styled.div`
   justify-content: space-between;
 
   @media (min-width: ${theme.breakpoints.SM}px) {
-    justify-content: end;
     img:first-of-type {
-      display: none;
+      justify-content: end;
     }
   }
   img:last-of-type {

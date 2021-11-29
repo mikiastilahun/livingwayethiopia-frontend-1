@@ -5,6 +5,7 @@ export const theme = {
     XSM: 376,
     SM: 576,
     Md: 768,
+    XMd: 864,
     LG: 992,
     XL: 1200,
     XXL: 1400,
