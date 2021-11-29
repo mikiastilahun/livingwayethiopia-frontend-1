@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import React from 'react'
 import { NavBarProvider } from '../contexts/navbar/index'
 import { DrawerProvider } from '../contexts/drawer'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
