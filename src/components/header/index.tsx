@@ -16,11 +16,13 @@ const Header = ({ isSticky }: { isSticky: boolean }) => {
                 <FullScreenComponent center={true}>
                     {navbar.paths.map((data, index) => {
                         if (data.button) {
-                            return <> <div className='borderContainer' key={index} />
-                                <ButtonNav key={`${index}button`}>{data.name}
+                            return <ButtonNav key={index} >
+                                <div className="border" />
+                                <button className='buttonContainer'>
+                                    {data.name}
                                     <img src="/icons/live.svg" alt="live" />
-                                </ButtonNav>
-                            </>
+                                </button>
+                            </ButtonNav>
 
                         } else
                             return <NavLink key={index} active={navbar.path === data.path} onClick={() => {

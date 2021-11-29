@@ -82,18 +82,6 @@ export const FullScreenComponent = styled.div<FullComponentType>`
   }
   display: flex;
   align-items: center;
-
-  .borderContainer {
-    height: 40px;
-    width: 2.5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: ${theme.colors.secondary};
-    border-radius: 15px;
-  }
-  .holder {
-    display: flex;
-  }
 `;
 
 export const NavLink = styled.span<NavLinkType>`
@@ -117,26 +105,43 @@ export const NavLink = styled.span<NavLinkType>`
   text-transform: uppercase;
 `;
 
-export const ButtonNav = styled.button`
-  margin-left: 15px;
-  margin-right: 15px;
-  padding: 7.5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: ${theme.boarder.radius}px;
-  font-size: 16px;
-  text-decoration: none;
-  border: 0px;
-  color: ${theme.colors.white};
-  background-color: ${theme.colors.secondary};
-  font-weight: 450;
-  text-transform: capitalize;
-  cursor: pointer;
-  font-family: ${theme.fonts.body};
+export const ButtonNav = styled.div`
+  width: 120px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: auto auto;
+  .border {
+    height: 40px;
+    width: 2.5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: ${theme.colors.secondary};
+    border-radius: 15px;
+  }
+  .buttonContainer {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: ${theme.boarder.radius}px;
+    font-size: 14px;
+    text-decoration: none;
+    border: 0px;
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.secondary};
+    font-weight: 450;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: ${theme.fonts.body};
+    img {
+      width: 20px;
+    }
+  }
 `;
 
 export const MobileScreenComponent = styled.div`
@@ -150,7 +155,7 @@ export const MobileScreenComponent = styled.div`
     display: none;
   }
   img {
-    height: 3vh;
+    height: 5vh;
     align-self: center;
   }
 `;

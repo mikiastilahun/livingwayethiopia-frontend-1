@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Link from 'next/link';
 import { MainContainer, DrawerContainerLeft, DrawerContainer, TopDrawerContainer, MidDrawerContainer, BottomDrawerContainer, } from './style';
 import { useNavBar } from '../../contexts/navbar';
 
