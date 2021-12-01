@@ -18,8 +18,6 @@ type FullComponentType = {
 export const HeaderContainer = styled.header<HeaderType>`
   font-weight: normal;
   padding: 10px;
-  padding-left: 15vw;
-  padding-right: 15vw;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -27,12 +25,15 @@ export const HeaderContainer = styled.header<HeaderType>`
   right: 0;
   transition: all 0.4s ease;
   display: flex;
+  z-index: 10000000;
   justify-content: space-between;
   color: ${theme.colors.primary};
   background-color: ${(props) =>
     props.isSticky ? theme.colors.background_secondary : "transparent"};
   box-shadow: ${(props) =>
     props.isSticky ? "0 1px 2px rgba(0, 0, 0, 0.08)" : "0 0 0"};
+  padding-left: 15vw;
+  padding-right: 15vw;
   @media (max-width: ${theme.breakpoints.XXL}px) {
     padding-left: 7.5vw;
     padding-right: 7.5vw;

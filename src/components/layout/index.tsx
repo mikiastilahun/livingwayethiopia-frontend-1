@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Sticky from "react-stickynode";
 import Header from "../header";
-// import Footer from "./footer";
 import { Waypoint } from "react-waypoint";
 import Drawer from '../drawer';
 import { LayoutContainer } from './style';
-// import { useDrawer } from '../../contexts/drawer';
+import Footer from '../footer';
 
 export default function Layout({ children }: any) {
     const [isSticky, setIsSticky] = useState<boolean>(false);
@@ -36,7 +35,7 @@ export default function Layout({ children }: any) {
                 <main>
                     {children}
                 </main>
-                {/* <Footer /> */}
+                <Footer />
             </LayoutContainer>
         </React.Fragment>
     );

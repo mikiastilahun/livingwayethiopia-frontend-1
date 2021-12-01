@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
 export const LayoutContainer = styled.header`
-  background-color: ${theme.colors.background};
+  background-color: ${theme.colors.background_secondary};
   color: ${theme.colors.text};
   height: 100vh;
   width: 100vw;

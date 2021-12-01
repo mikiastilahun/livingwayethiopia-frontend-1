@@ -1,0 +1,135 @@
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
+
+export const FooterContainer = styled.div`
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 15vw;
+  padding-right: 15vw;
+  @media (max-width: ${theme.breakpoints.XXL}px) {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.XL}px) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  @media (max-width: ${theme.breakpoints.LG}px) {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.SM}px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  background-color: ${theme.colors.background};
+
+  .bottom {
+    width: 100%;
+    align-self: flex-end;
+
+    p {
+      font-family: DM Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: ${theme.colors.text};
+    }
+  }
+  .upper {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    grid-column-gap: 50px;
+    grid-row-gap: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .divider {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    justify-self: center;
+    border: 1px solid ${theme.colors.border_color};
+  }
+`;
+
+export const MapContainer = styled.div`
+  width: 600px;
+  @media (max-width: 1053px) {
+    width: 500px;
+  }
+  @media (max-width: 953px) {
+    width: 450px;
+  }
+  @media (max-width: 853px) {
+    width: 400px;
+  }
+  @media (max-width: 810px) {
+    width: 95vw;
+  }
+  @media (max-width: ${theme.breakpoints.SM}px) {
+    width: calc(100vw - 40px);
+  }
+  height: 100%;
+  background: #123;
+  display: flex;
+`;
+
+export const TextContainer = styled.div`
+  width: 400px;
+  @media (max-width: 953px) {
+    width: 350px;
+  }
+  @media (max-width: 810px) {
+    width: 95vw;
+  }
+  @media (max-width: ${theme.breakpoints.SM}px) {
+    width: calc(100vw - 40px);
+  }
+  color: ${theme.colors.secondary};
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  .title {
+    width: 100%;
+    margin: 0px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .detailText {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  .multipleDetailText {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .left {
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+    }
+  }
+  .SocialList {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+`;
