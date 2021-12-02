@@ -7,10 +7,10 @@ import Image from "next/image";
 
 
 
-const Header = ({ isSticky }: { isSticky: boolean }) => {
+const Header = () => {
     const navbar = useNavBar();
     return (
-        <HeaderContainer isSticky={isSticky}>
+        <HeaderContainer isSticky={navbar.isSticky}>
             <Logo>
                 <LogoContainer />
             </Logo>

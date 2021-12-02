@@ -1,40 +1,36 @@
 import React, { useState } from "react";
-import Sticky from "react-stickynode";
 import Header from "../header";
 import { Waypoint } from "react-waypoint";
 import Drawer from '../drawer';
 import { LayoutContainer } from './style';
 import Footer from '../footer';
+import Subscription from '../subscription';
+import { useNavBar } from '../../contexts/navbar';
 
 export default function Layout({ children }: any) {
-    const [isSticky, setIsSticky] = useState<boolean>(false);
-    // const drawer = useDrawer();
+    const navbar = useNavBar();
     const onWaypointPositionChange = ({ currentPosition }: any) => {
         if (currentPosition === "above")
-            setIsSticky(true);
-
+            navbar.updateIsSticky(true);
         if (currentPosition === "inside")
-            setIsSticky(false);
-
+            navbar.updateIsSticky(false);
     };
 
     return (
         <React.Fragment>
             <LayoutContainer>
-                <Sticky enabled={isSticky} innerZ={1000}>
-                    <Header isSticky={isSticky} />
-                </Sticky>
-
+                <Header />
                 <Drawer />
                 <Waypoint
                     onEnter={() => {
-                        setIsSticky(false);
+                        navbar.updateIsSticky(false);
                     }}
                     onPositionChange={onWaypointPositionChange}
                 />
                 <main>
                     {children}
                 </main>
+                <Subscription />
                 <Footer />
             </LayoutContainer>
         </React.Fragment>

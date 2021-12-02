@@ -17,6 +17,7 @@ const Home: NextPage = () => {
           The Rest of the Code goes here
         </p>
       </div>
+
     </Layout>
   )
 }

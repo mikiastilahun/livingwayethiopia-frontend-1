@@ -9,12 +9,15 @@ type PathsType = {
 
 const initialValues: {
     path: string,
+    isSticky: boolean,
     drawerView: boolean,
     paths: PathsType[],
     updateNavBar: Function,
     updateDrawerView: Function
+    updateIsSticky: Function
 } = {
     path: "",
+    isSticky: true,
     drawerView: false,
     paths: [{
         "path": "/",
@@ -22,6 +25,7 @@ const initialValues: {
     },],
     updateNavBar: () => { },
     updateDrawerView: () => { },
+    updateIsSticky: () => { },
 };
 
 
@@ -31,6 +35,7 @@ const useNavBar = () => useContext(NavBarContext);
 
 const NavBarProvider: React.FC = ({ children }) => {
     const [path, setPath] = useState<string>("/");
+    const [isSticky, setIsSticky] = useState<boolean>(true);
     const [drawerView, setDrawerView] = useState<boolean>(false);
     const [paths, setPaths] = useState<PathsType[]>([
         {
@@ -70,6 +75,10 @@ const NavBarProvider: React.FC = ({ children }) => {
         setPath(data);
     };
 
+    const updateIsSticky = (data: boolean) => {
+        setIsSticky(data);
+    };
+
     const updateDrawerView = () => {
         setDrawerView(!drawerView);
     };
@@ -79,9 +88,11 @@ const NavBarProvider: React.FC = ({ children }) => {
             value={{
                 path,
                 paths,
+                isSticky,
                 drawerView,
                 updateNavBar,
                 updateDrawerView,
+                updateIsSticky
             }}
         >
             {children}

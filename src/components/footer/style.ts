@@ -7,7 +7,9 @@ export const FooterContainer = styled.div`
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
+  min-width: 320px;
   padding-left: 15vw;
   padding-right: 15vw;
   @media (max-width: ${theme.breakpoints.XXL}px) {
@@ -46,8 +48,8 @@ export const FooterContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    grid-column-gap: 50px;
-    grid-row-gap: 25px;
+    grid-column-gap: 35px;
+    grid-row-gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
   }
@@ -63,16 +65,26 @@ export const FooterContainer = styled.div`
 
 export const MapContainer = styled.div`
   width: 600px;
+  min-width: 320px;
+  @media (min-width: 1700px) {
+    width: 750px;
+  }
+  @media (max-width: 1324px) {
+    width: 600px;
+  }
+  @media (max-width: 1224px) {
+    width: 575px;
+  }
   @media (max-width: 1053px) {
     width: 500px;
   }
   @media (max-width: 953px) {
     width: 450px;
   }
-  @media (max-width: 853px) {
+  @media (max-width: 865px) {
     width: 400px;
   }
-  @media (max-width: 810px) {
+  @media (max-width: 834px) {
     width: 95vw;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
@@ -88,7 +100,7 @@ export const TextContainer = styled.div`
   @media (max-width: 953px) {
     width: 350px;
   }
-  @media (max-width: 810px) {
+  @media (max-width: 834px) {
     width: 95vw;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
@@ -127,6 +139,7 @@ export const TextContainer = styled.div`
     }
   }
   .SocialList {
+    cursor: pointer;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
