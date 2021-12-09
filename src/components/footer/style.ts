@@ -35,9 +35,6 @@ export const FooterContainer = styled.div`
     align-self: flex-end;
 
     p {
-      font-family: DM Sans;
-      font-style: normal;
-      font-weight: normal;
       font-size: 14px;
       line-height: 18px;
       color: ${theme.colors.text};
@@ -113,7 +110,6 @@ export const TextContainer = styled.div`
   .title {
     width: 100%;
     margin: 0px;
-    font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -121,7 +117,6 @@ export const TextContainer = styled.div`
     align-items: center;
   }
   .detailText {
-    font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;

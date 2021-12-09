@@ -11,8 +11,9 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     padding: 0;
     margin: 0;
-    font-family: DM Sans -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: DM Sans ;
+    font-style: normal;
+    font-weight: normal;
   }
 
   a {

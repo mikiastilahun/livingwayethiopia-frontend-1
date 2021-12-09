@@ -40,7 +40,6 @@ export const SubscriptionBox = styled.div`
   flex-direction: column;
   span {
     text-align: center;
-    font-family: DM Sans;
     color: ${theme.colors.text};
     font-style: normal;
   }
@@ -77,7 +76,6 @@ export const SubscriptionFormInput = styled.input`
   background-color: #eff3f7;
   padding-left: 20px;
   border-radius: ${theme.boarder.radius}px;
-  font-family: DM Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -107,7 +105,6 @@ export const SubscriptionFormButton = styled.button`
     width: 90%;
   }
   p {
-    font-family: DM Sans;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
