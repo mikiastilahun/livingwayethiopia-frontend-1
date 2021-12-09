@@ -11,7 +11,6 @@ const Welcome = () => {
     return (
         <WelcomeContainer >
             <BackGroundImage src="/images/header.webp" layout='fill' alt="banner-image" />
-
             <LeftContainer>
                 <p className='title'>
                     Lorem ipsum dolor sit amet, consectetur

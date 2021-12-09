@@ -6,19 +6,15 @@ export const WelcomeContainer = styled.div`
   position: relative;
   min-width: 300px;
   width: 100vw;
-  min-height: 800px;
-  @media (max-width: ${theme.breakpoints.LG}px) {
-    min-height: 600px;
-  }
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    min-height: 550px;
-  }
+
+  padding-bottom: 250px;
   display: flex;
 `;
 
 export const BackGroundImage = styled(Image)`
   position: absolute;
   z-index: 1;
+  object-fit: cover;
 `;
 
 export const LeftContainer = styled.div`
@@ -60,7 +56,7 @@ export const LeftContainer = styled.div`
     font-weight: bold;
     font-size: 52px;
     letter-spacing: -1px;
-    color: #02073e80;
+    color: ${theme.colors.text};
     margin-bottom: 20px;
   }
   .midText {
@@ -68,7 +64,7 @@ export const LeftContainer = styled.div`
     font-weight: normal;
     font-size: 16px;
     line-height: 25px;
-    color: #02073e80;
+    color: ${theme.colors.text};
   }
   .buttonContainer {
     margin-top: 20px;
@@ -87,7 +83,7 @@ export const ButtonContainer = styled.button`
   border: 0px;
   border-radius: 4px;
   height: 55px;
-  background: #02073e80;
+  background: ${theme.colors.secondary};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +99,7 @@ export const ButtonContainer = styled.button`
 `;
 
 export const HallowButton = styled.button`
-  border: 3px solid #02073e80;
+  border: 3px solid ${theme.colors.secondary};
   box-sizing: border-box;
   height: 55px;
   border-radius: 4px;
@@ -118,6 +114,6 @@ export const HallowButton = styled.button`
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    color: #02073e80;
+    color: ${theme.colors.secondary};
   }
 `;
