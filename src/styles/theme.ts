@@ -20,7 +20,7 @@ export const theme = {
     background_secondary: "#FFFFFF", // secondary background color
     passive_background: "#343F50",
     text: "#0F2137", // body color and primary color
-    text_secondary: "#E9ECEF", // secondary body color
+    text_secondary: "#343D48", // secondary body color
     heading: "#02073E", // primary heading color
     heading_secondary: "#343D48", // heading color
     border_color: "#E9EDF5", // border color

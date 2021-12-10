@@ -6,8 +6,14 @@ export const WelcomeContainer = styled.div`
   position: relative;
   min-width: 300px;
   width: 100vw;
-
-  padding-bottom: 250px;
+  background: ${theme.colors.background_secondary};
+  padding-bottom: 200px;
+  @media (max-width: ${theme.breakpoints.LG}px) {
+    padding-bottom: 150px;
+  }
+  @media (max-width: ${theme.breakpoints.SM}px) {
+    padding-bottom: 75px;
+  }
   display: flex;
 `;
 
@@ -110,7 +116,6 @@ export const HallowButton = styled.button`
   padding-left: 40px;
   padding-right: 40px;
   p {
-    font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;

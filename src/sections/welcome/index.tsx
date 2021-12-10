@@ -1,16 +1,14 @@
 
 import React from 'react';
 import { BackGroundImage, ButtonContainer, HallowButton, LeftContainer, WelcomeContainer, } from './style';
-import { useNavBar } from '../../contexts/navbar';
-import Image from "next/image";
-
 
 
 const Welcome = () => {
-    const navbar = useNavBar();
     return (
         <WelcomeContainer >
-            <BackGroundImage src="/images/header.webp" layout='fill' alt="banner-image" />
+            <BackGroundImage
+                loading="eager"
+                src="/images/header.webp" layout='fill' alt="banner-image" />
             <LeftContainer>
                 <p className='title'>
                     Lorem ipsum dolor sit amet, consectetur
