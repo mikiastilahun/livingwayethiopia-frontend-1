@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Arrow, EventContainer, IconImage, SliderContainer, } from './style';
+import { Arrow, EventContainer, IconImage, SliderContainer, Title, } from './style';
 import Image from "next/image";
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from "keen-slider/react"
@@ -49,9 +49,9 @@ const EventSection = () => {
     return (
         <>
             <EventContainer >
-                <p className='eventSectionTitle'>
+                <Title>
                     Events
-                </p>
+                </Title>
             </EventContainer>
             <SliderContainer>
                 <div ref={ref} className="keen-slider">

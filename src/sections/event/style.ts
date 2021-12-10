@@ -12,10 +12,11 @@ export const EventContainer = styled.div`
   align-items: center;
   .eventSectionTitle {
     font-weight: 600;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
+    font-size: 50px;
+    line-height: 50px;
     text-align: center;
+    letter-spacing: -0.5px;
+    color: ${theme.colors.text};
     padding-left: 15vw;
     padding-right: 15vw;
     @media (min-width: ${theme.breakpoints.XXXL}px) {
@@ -40,6 +41,36 @@ export const EventContainer = styled.div`
     }
   }
 `;
+export const Title = styled.p`
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: ${theme.colors.text};
+  padding-left: 15vw;
+  padding-right: 15vw;
+  @media (min-width: ${theme.breakpoints.XXXL}px) {
+    padding-left: 17.5vw;
+    padding-right: 17.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.XXL}px) {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.XL}px) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  @media (max-width: ${theme.breakpoints.LG}px) {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+  }
+  @media (max-width: ${theme.breakpoints.SM}px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+`;
 
 export const IconImage = styled(Image)`
   object-fit: fill;
@@ -47,6 +78,7 @@ export const IconImage = styled(Image)`
 
 export const SliderContainer = styled.div`
   position: relative;
+  margin-bottom: 100px;
   .keen-slider {
     transition: height 0.3s;
   }
