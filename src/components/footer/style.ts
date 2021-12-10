@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { cssSnippets } from "../../styles/padding";
 import { theme } from "../../styles/theme";
 
 export const FooterContainer = styled.div`
@@ -10,24 +11,7 @@ export const FooterContainer = styled.div`
   overflow: hidden;
 
   min-width: 320px;
-  padding-left: 15vw;
-  padding-right: 15vw;
-  @media (max-width: ${theme.breakpoints.XXL}px) {
-    padding-left: 7.5vw;
-    padding-right: 7.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.XL}px) {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  @media (max-width: ${theme.breakpoints.LG}px) {
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  ${cssSnippets.padding}
   background-color: ${theme.colors.background};
 
   .bottom {

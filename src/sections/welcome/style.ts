@@ -54,8 +54,8 @@ export const LeftContainer = styled.div`
     width: 100%;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .title {
     font-style: normal;

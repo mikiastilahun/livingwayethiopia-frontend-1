@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
+import { cssSnippets } from "../../styles/padding";
 
 type HeaderType = {
   isSticky: boolean;
@@ -33,24 +34,7 @@ export const HeaderContainer = styled.header<HeaderType>`
     props.isSticky ? theme.colors.background_secondary : "transparent"};
   box-shadow: ${(props) =>
     props.isSticky ? "0 1px 2px rgba(0, 0, 0, 0.08)" : "0 0 0"};
-  padding-left: 15vw;
-  padding-right: 15vw;
-  @media (max-width: ${theme.breakpoints.XXL}px) {
-    padding-left: 7.5vw;
-    padding-right: 7.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.XL}px) {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  @media (max-width: ${theme.breakpoints.LG}px) {
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  ${cssSnippets.padding}
 `;
 
 export const Logo = styled.div`

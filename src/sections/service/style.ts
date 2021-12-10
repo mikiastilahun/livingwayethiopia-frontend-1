@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { cssSnippets } from "../../styles/padding";
 import { theme } from "../../styles/theme";
 
 export const ServiceContainer = styled.div`
@@ -18,28 +19,7 @@ export const InnerServiceContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  padding-left: 15vw;
-  padding-right: 15vw;
-  @media (min-width: ${theme.breakpoints.XXXL}px) {
-    padding-left: 17.5vw;
-    padding-right: 17.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.XXL}px) {
-    padding-left: 7.5vw;
-    padding-right: 7.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.XL}px) {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  @media (max-width: ${theme.breakpoints.LG}px) {
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
-  }
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  ${cssSnippets.padding}
 `;
 
 export const CardContainer = styled.div`
