@@ -24,20 +24,24 @@ export const TopContainer = styled.div`
   .firstContainer {
     display: grid;
     height: 300px;
+    position: relative;
     @media (min-width: 1900px) {
       height: 400px;
     }
-    grid-column: 1/2;
+    grid-column: 1/3;
     @media (max-width: ${theme.breakpoints.LG}px) {
       grid-column: 1/5;
       height: 400px;
     }
     @media (max-width: ${theme.breakpoints.SM}px) {
       grid-column: 1/10;
+      height: 500px;
     }
     grid-gap: 10px;
     overflow: hidden;
     div {
+      position: relative;
+      height: 100%;
       border-radius: 9px;
       background-color: #123;
     }
@@ -47,7 +51,7 @@ export const TopContainer = styled.div`
     @media (min-width: 1900px) {
       height: 400px;
     }
-    grid-column: 2/5;
+    grid-column: 3/5;
     @media (max-width: ${theme.breakpoints.LG}px) {
       grid-column: 5/10;
       height: 400px;
