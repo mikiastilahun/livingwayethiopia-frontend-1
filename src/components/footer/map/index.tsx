@@ -6,11 +6,11 @@ const containerStyle = {
     height: '450px'
 
 };
-
 const MapDisplay = () => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyBUFjLlWimV88LGYorZjkzZLIlKxxfHRII"
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+        version: "weekly",
     })
 
     const [map, setMap] = useState(null)
@@ -26,16 +26,31 @@ const MapDisplay = () => {
     }, [])
 
     return isLoaded ? (
+
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={{
                 lat: 9.010364,
                 lng: 38.744669
             }}
-            zoom={15.5}
+            zoom={20}
             onLoad={onLoad}
             onUnmount={onUnmount}
-
+            clickableIcons
+            options={{
+                disableDefaultUI: true,
+                fullscreenControl: false,
+                gestureHandling: "cooperative",
+                // restriction: {
+                //     strictBounds: true,
+                //     latLngBounds: {
+                //         north: 32.95418,
+                //         south: 3.42206,
+                //         east: 47.78942,
+                //         west: 14.95943,
+                //     },
+                // },
+            }}
         />
     ) : <></>
 }

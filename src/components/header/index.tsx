@@ -4,11 +4,13 @@ import { HeaderContainer, Logo, Detail, FullScreenComponent, MobileScreenCompone
 import { useNavBar } from '../../contexts/navbar';
 import LogoContainer from '../logo';
 import Image from "next/image";
-
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
 
 const Header = () => {
     const navbar = useNavBar();
+    const router = useRouter();
     return (
         <HeaderContainer isSticky={navbar.isSticky}>
             <Logo>
@@ -29,8 +31,9 @@ const Header = () => {
                             </ButtonNav>
 
                         } else
-                            return <NavLink key={index} active={navbar.path === data.path} onClick={() => {
+                            return <NavLink key={index} active={router.asPath === data.path} onClick={() => {
                                 navbar.updateNavBar(data.path);
+                                router.push(data.path, undefined, { shallow: true })
                             }}>
                                 {data.name}
                             </NavLink>

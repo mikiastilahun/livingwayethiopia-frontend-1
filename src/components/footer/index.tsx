@@ -62,16 +62,16 @@ const Footer = () => {
                         Connects
                     </p>
                     <div className='SocialList'>
-                        <Image width={25} height={25} src="/icons/twitter.svg" alt="social-twitter" onClick={() => {
+                        <Image loading="eager" width={25} height={25} src="/icons/twitter.svg" alt="social-twitter" onClick={() => {
                             window.open('https://twitter.com', '_blank');
                         }} />
-                        <Image width={25} height={25} src="/icons/facebook.svg" alt="social-facebook" onClick={() => {
+                        <Image loading="eager" width={25} height={25} src="/icons/facebook.svg" alt="social-facebook" onClick={() => {
                             window.open('https://facebook.com', '_blank');
                         }} />
-                        <Image width={25} height={25} src="/icons/instagram.svg" alt="social-instagram" onClick={() => {
+                        <Image loading="eager" width={25} height={25} src="/icons/instagram.svg" alt="social-instagram" onClick={() => {
                             window.open('https://instagram.com', '_blank');
                         }} />
-                        <Image width={25} height={25} src="/icons/youtube.svg" alt="social-youtube" onClick={() => {
+                        <Image loading="eager" width={25} height={25} src="/icons/youtube.svg" alt="social-youtube" onClick={() => {
                             window.open('https://youtube.com', '_blank');
                         }} />
                     </div>

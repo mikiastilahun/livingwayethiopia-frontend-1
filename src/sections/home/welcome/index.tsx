@@ -7,14 +7,19 @@ const Welcome = () => {
     return (
         <WelcomeContainer >
             <BackGroundImage
-                loading="eager"
-                src="/images/header.webp" layout='fill' alt="banner-image" />
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/images/header.webp"
+                src="/images/header.webp"
+                layout='fill'
+                alt="banner-image"
+            />
             <LeftContainer>
                 <p className='title'>
-                    Lorem ipsum dolor sit amet, consectetur
+                    Lorem ipsum dolor sit
                 </p>
                 <p className='midText'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 </p>
                 <div className="buttonContainer">
                     <ButtonContainer>
@@ -24,7 +29,7 @@ const Welcome = () => {
                     </ButtonContainer>
                     <HallowButton>
                         <p>
-                            About Us
+                            Read More
                         </p>
                     </HallowButton>
                 </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { cssSnippets } from "../../styles/padding";
-import { theme } from "../../styles/theme";
+import { cssSnippets } from "../../../styles/padding";
+import { theme } from "../../../styles/theme";
 
 export const EventContainer = styled.div`
   min-width: 300px;

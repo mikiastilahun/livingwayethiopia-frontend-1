@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { cssSnippets } from "../../styles/padding";
 import { theme } from "../../styles/theme";
 export const SubscriptionContainer = styled.div`
   width: 100vw;
@@ -7,6 +8,7 @@ export const SubscriptionContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${cssSnippets.padding}
 `;
 
 export const BackgroundImage = styled.div`
@@ -21,18 +23,13 @@ export const BackgroundImage = styled.div`
 `;
 
 export const SubscriptionBox = styled.div`
-  width: 80%;
+  width: 100%;
   z-index: 1000;
   background-color: #f9fafcdd;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  @media (max-width: ${theme.breakpoints.XMSM}px) {
-    padding-left: 10px;
-    padding-right: 10px;
-    width: calc(100vw - 20px);
-  }
   margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 9px;

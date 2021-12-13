@@ -6,7 +6,7 @@ const Subscription = () => {
     return (
         <SubscriptionContainer>
             <BackgroundImage>
-                <Image width={200} height={200} src="/icons/books.svg" />
+                <Image loading="eager" width={200} height={200} src="/icons/books.svg" alt="books" />
             </BackgroundImage>
             <SubscriptionBox>
                 <span className='title'>

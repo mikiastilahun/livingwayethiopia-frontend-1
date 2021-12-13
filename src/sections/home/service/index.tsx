@@ -29,7 +29,7 @@ const ServiceSection = () => {
             </Title>
             <InnerServiceContainer>
                 {ServiceData.map((data, index) => {
-                    return <CardContainer>
+                    return <CardContainer key={index}>
                         <div className="left">
                             <Image src="/icons/calendar.svg" alt="calender" width={35} height={35} loading="eager" />
                         </div>

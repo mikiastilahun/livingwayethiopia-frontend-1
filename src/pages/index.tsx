@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Layout from '../components/layout';
-import EventSection from '../sections/event';
-import OurCurchSection from '../sections/ourChurch';
-import ServiceSection from '../sections/service';
-import Vision from '../sections/vision';
-import Welcome from '../sections/welcome';
+import Welcome from '../sections/home/welcome';
+import ServiceSection from '../sections/home/service';
+import EventSection from '../sections/home/event';
+import Vision from '../sections/home/vision';
+import OurCurchSection from '../sections/home/ourChurch';
 
 const Home: NextPage = () => {
   return (

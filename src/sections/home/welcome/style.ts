@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 
 export const WelcomeContainer = styled.div`
   position: relative;
@@ -87,17 +87,17 @@ export const LeftContainer = styled.div`
 
 export const ButtonContainer = styled.button`
   border: 0px;
-  border-radius: 4px;
+  border-radius: 9px;
   height: 55px;
   background: ${theme.colors.secondary};
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   p {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 20px;
     text-align: center;
     color: #ffffff;
@@ -105,19 +105,19 @@ export const ButtonContainer = styled.button`
 `;
 
 export const HallowButton = styled.button`
-  border: 3px solid ${theme.colors.secondary};
+  border: 2px solid ${theme.colors.secondary};
   box-sizing: border-box;
   height: 55px;
-  border-radius: 4px;
+  border-radius: 9px;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   p {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 20px;
     color: ${theme.colors.secondary};
   }

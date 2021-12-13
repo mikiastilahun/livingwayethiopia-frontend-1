@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { cssSnippets } from "../../styles/padding";
-import { theme } from "../../styles/theme";
+import { cssSnippets } from "../../../styles/padding";
+import { theme } from "../../../styles/theme";
 
 export const OurCurchContainer = styled.div`
   min-width: 300px;
@@ -43,7 +43,6 @@ export const TopContainer = styled.div`
       position: relative;
       height: 100%;
       border-radius: 9px;
-      background-color: #123;
     }
   }
   .secondContainer {

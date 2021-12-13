@@ -57,7 +57,14 @@ const EventSection = () => {
                 <div ref={ref} className="keen-slider">
                     {images.map((data, index) => {
                         return <div className="keen-slider__slide customSlider" key={index} >
-                            <Image loading="eager" src={data} alt="event" layout='fill' />
+                            <Image
+                                loading="lazy"
+                                placeholder="blur"
+                                blurDataURL={data}
+                                src={data}
+                                alt="event"
+                                layout='fill'
+                            />
                             sa
                         </div>
                     })}

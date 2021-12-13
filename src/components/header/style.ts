@@ -61,24 +61,24 @@ export const FullScreenComponent = styled.div<FullComponentType>`
 `;
 
 export const NavLink = styled.span<NavLinkType>`
-  margin-left: 12.5px;
-  margin-right: 12.5px;
-  font-size: 13px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-weight: ${(props) => (props.active ? "bold" : 100)};
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-  font-weight: 450;
   text-transform: capitalize;
   color: ${(props) =>
     props.active ? theme.colors.primary : theme.colors.text};
   cursor: pointer;
-  font-family: ${theme.fonts.body} -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
   text-transform: uppercase;
+  :hover {
+    color: ${theme.colors.primary};
+  }
 `;
 
 export const ButtonNav = styled.div`
@@ -95,15 +95,15 @@ export const ButtonNav = styled.div`
     border-radius: 15px;
   }
   .buttonContainer {
-    margin-left: 15px;
-    margin-right: 15px;
-    padding: 7.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: ${theme.boarder.radius}px;
     font-size: 14px;
     text-decoration: none;

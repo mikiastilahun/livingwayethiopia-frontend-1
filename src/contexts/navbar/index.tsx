@@ -47,6 +47,10 @@ const NavBarProvider: React.FC = ({ children }) => {
             "name": "MINISTRY"
         },
         {
+            "path": "/articles",
+            "name": "ARTICLES"
+        },
+        {
             "path": "/sermon",
             "name": "SERMON"
         },
@@ -55,7 +59,7 @@ const NavBarProvider: React.FC = ({ children }) => {
             "name": "ABOUT US"
         },
         {
-            "path": "/support us",
+            "path": "/support-us",
             "name": "SUPPORT US",
 
         },
