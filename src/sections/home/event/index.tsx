@@ -65,7 +65,6 @@ const EventSection = () => {
                                 alt="event"
                                 layout='fill'
                             />
-                            sa
                         </div>
                     })}
                 </div>
