@@ -5,6 +5,7 @@ export const theme = {
     XSM: 376,
     XMSM: 420,
     SM: 576,
+    SMd: 642,
     Md: 768,
     XMd: 864,
     LG: 992,
@@ -16,11 +17,13 @@ export const theme = {
     white: "#fff",
     primary: "#EF9410", // primary button and link color
     secondary: "#015B8F", // secondary color - can be used for hover states
+    third: "#252E4F",
     background: "#F9FAFC", // body background color
     background_secondary: "#FFFFFF", // secondary background color
     passive_background: "#343F50",
-    text: "#0F2137", // body color and primary color
-    text_secondary: "#343D48", // secondary body color
+    text: "#0F2137",
+    text_secondary: "#343D48",
+    text_third: "#737a96",
     heading: "#02073E", // primary heading color
     heading_secondary: "#343D48", // heading color
     border_color: "#E9EDF5", // border color

@@ -7,7 +7,7 @@ import Footer from '../footer';
 import Subscription from '../subscription';
 import { useNavBar } from '../../contexts/navbar';
 
-export default function Layout({ children }: any) {
+export default function Layout({ children, background }: any) {
     const navbar = useNavBar();
     const onWaypointPositionChange = ({ currentPosition }: any) => {
         if (currentPosition === "above")
@@ -18,7 +18,7 @@ export default function Layout({ children }: any) {
 
     return (
         <React.Fragment>
-            <LayoutContainer>
+            <LayoutContainer background={background}>
                 <Header />
                 <Drawer />
                 <Waypoint

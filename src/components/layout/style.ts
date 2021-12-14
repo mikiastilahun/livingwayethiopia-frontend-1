@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
-
-export const LayoutContainer = styled.header`
-  background-color: ${theme.colors.background_secondary};
+interface LayoutContainerData {
+  background?: string;
+}
+export const LayoutContainer = styled.header<LayoutContainerData>`
+  background-color: ${(props) =>
+    props.background ? props.background : theme.colors.background_secondary};
   color: ${theme.colors.text};
   height: 100vh;
   width: 100vw;
