@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
-import { cssSnippets } from "../../styles/padding";
+import { cssSnippets } from "../../styles/cssSnippets";
 
 type HeaderType = {
   isSticky: boolean;
@@ -53,7 +53,7 @@ export const Detail = styled.div`
 `;
 
 export const FullScreenComponent = styled.div<FullComponentType>`
-  @media (max-width: ${theme.breakpoints.XMd - 1}px) {
+  @media (max-width: 919px) {
     display: none;
   }
   display: flex;
@@ -124,7 +124,7 @@ export const MobileScreenComponent = styled.div`
     height: 4.5vh;
   }
   align-self: center;
-  @media (min-width: ${theme.breakpoints.XMd}px) {
+  @media (min-width: 920px) {
     display: none;
   }
 `;

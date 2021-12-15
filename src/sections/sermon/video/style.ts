@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { cssSnippets } from "../../../styles/cssSnippets";
 import { theme } from "../../../styles/theme";
 
-export const ArticleListContainer = styled.div`
+export const VideoListContainer = styled.div`
   min-width: 300px;
   width: 100vw;
   gap: 20px;

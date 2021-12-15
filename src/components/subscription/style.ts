@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cssSnippets } from "../../styles/padding";
+import { cssSnippets } from "../../styles/cssSnippets";
 import { theme } from "../../styles/theme";
 export const SubscriptionContainer = styled.div`
   width: 100vw;

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import { ArticleListContainer } from './style';
-import ArticleCard from '../../../components/articlesCard/card';
+import ArticleCard from '../../../components/cards/articles';
 
 
 
