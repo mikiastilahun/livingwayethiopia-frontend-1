@@ -24,7 +24,7 @@ export const BackgroundImage = styled.div`
 
 export const SubscriptionBox = styled.div`
   width: 100%;
-  z-index: 1000;
+  z-index: 10;
   background-color: #f9fafcdd;
   padding-top: 40px;
   padding-bottom: 40px;

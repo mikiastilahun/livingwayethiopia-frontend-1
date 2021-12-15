@@ -6,21 +6,36 @@ import { theme } from "../../styles/theme";
 export const SermonContainer = styled.div`
   min-width: 300px;
   width: 100vw;
-  gap: 20px;
+  gap: 10px;
   padding-bottom: 50px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
-  ${cssSnippets.padding}
-  .tabs {
+  .topPart {
+    padding-top: 70px;
+    margin: 0px;
     display: flex;
-    gap: 30px;
-  }
-  .divider {
+    position: fixed;
+    gap: 10px;
     width: 100%;
-    height: 2px;
-    background-color: ${theme.colors.third}22;
-    border-radius: 50px;
+    height: 107.5px;
+    z-index: 15;
+    background-color: ${theme.colors.background_secondary};
+    flex-direction: column;
+    ${cssSnippets.padding}
+    .tabs {
+      display: flex;
+      gap: 30px;
+    }
+    .divider {
+      width: 100%;
+      height: 2px;
+      background-color: ${theme.colors.third}22;
+      border-radius: 50px;
+    }
+  }
+  .sermonBottom {
+    padding-top: 110px;
   }
 `;
 

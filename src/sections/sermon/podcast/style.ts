@@ -11,9 +11,9 @@ export const PodcastListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  ${cssSnippets.padding}
   .podcastCard {
     margin: 0px;
-
     width: calc(33% - 11px);
     @media (min-width: ${theme.breakpoints.XXXL}px) {
       width: calc(24.5% - 10px);
@@ -29,15 +29,11 @@ export const PodcastListContainer = styled.div`
     @media (max-width: 505px) {
       width: 100%;
     }
-
-    /* width: calc(33.1% - 10px); */
-    /* @media (max-width: 1106px) {
-      width: calc(33.4% - 10px);
-    } */
   }
 `;
 export const SearchContainer = styled.div`
   width: 100%;
+  margin-top: 20px;
   display: flex;
   margin-bottom: 20px;
   justify-content: flex-end;

@@ -17,33 +17,37 @@ const SermonSection = () => {
     const [activeTab, setActiveTab] = useState<ActiveTabData>(ActiveTabData.Podcasts);
     return (
         <SermonContainer >
-            <div className='tabs'>
-                <TabContainer active={ActiveTabData.Podcasts === activeTab} onClick={() => {
-                    setActiveTab(ActiveTabData.Podcasts)
-                }}>
-                    <p>
-                        Podcast
-                    </p>
-                </TabContainer>
-                <TabContainer active={ActiveTabData.Videos === activeTab} onClick={() => {
-                    setActiveTab(ActiveTabData.Videos)
-                }}>
-                    <p>
-                        Videos
-                    </p>
-                </TabContainer>
-                <TabContainer active={ActiveTabData.Audios === activeTab} onClick={() => {
-                    setActiveTab(ActiveTabData.Audios)
-                }}>
-                    <p>
-                        Audio
-                    </p>
-                </TabContainer>
+            <div className='topPart'>
+                <div className='tabs'>
+                    <TabContainer active={ActiveTabData.Podcasts === activeTab} onClick={() => {
+                        setActiveTab(ActiveTabData.Podcasts)
+                    }}>
+                        <p>
+                            Podcast
+                        </p>
+                    </TabContainer>
+                    <TabContainer active={ActiveTabData.Videos === activeTab} onClick={() => {
+                        setActiveTab(ActiveTabData.Videos)
+                    }}>
+                        <p>
+                            Videos
+                        </p>
+                    </TabContainer>
+                    <TabContainer active={ActiveTabData.Audios === activeTab} onClick={() => {
+                        setActiveTab(ActiveTabData.Audios)
+                    }}>
+                        <p>
+                            Audio
+                        </p>
+                    </TabContainer>
+                </div>
+                <div className='divider' />
             </div>
-            <div className='divider' />
-            {ActiveTabData.Audios === activeTab && <AudioList />}
-            {ActiveTabData.Videos === activeTab && <VideoList />}
-            {ActiveTabData.Podcasts === activeTab && <PodcastList />}
+            <div className='sermonBottom'>
+                {ActiveTabData.Audios === activeTab && <AudioList />}
+                {ActiveTabData.Videos === activeTab && <VideoList />}
+                {ActiveTabData.Podcasts === activeTab && <PodcastList />}
+            </div>
         </SermonContainer>
     );
 }

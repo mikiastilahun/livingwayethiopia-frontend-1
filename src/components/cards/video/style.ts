@@ -2,14 +2,15 @@ import styled from "styled-components";
 import { cssSnippets } from "../../../styles/cssSnippets";
 import { theme } from "../../../styles/theme";
 
-export const PodcastCardContainer = styled.div`
+export const VideoCardContainer = styled.div`
   width: 100%;
   cursor: pointer;
   border-radius: 9px;
   background-color: ${theme.colors.background};
   display: flex;
+  gap: 10px;
   flex-direction: column;
-  /* gap: 20px; */
+  box-shadow: 3px 3px 10px ${theme.colors.third}44;
   .imageContainer {
     height: 200px;
     width: 100%;
@@ -18,29 +19,47 @@ export const PodcastCardContainer = styled.div`
     border-radius: 4px;
     overflow: hidden;
     border-radius: 9px 9px 0px 0px;
+    .videoSide {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: ${theme.colors.third}99;
+      padding: 10px;
+      right: 10px;
+      top: 10px;
+      border-radius: ${theme.boarder.radius}px;
+      font-weight: lighter;
+      padding: 10px;
+      text-align: right;
+      font-size: 12px;
+      position: absolute;
+      color: #fff;
+      z-index: 3;
+    }
   }
-  .bottom {
+  .videoCardBottom {
     margin: 0px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: start;
     gap: 10px;
-    .podcastTitle {
+    .videoTitle {
       margin: 0px;
+      text-align: left;
       font-style: italic;
       font-weight: bolder;
       font-size: 20px;
-      display: flex;
-      align-items: center;
       color: ${theme.colors.text};
     }
-    .podcastDescription {
+    .videoDescription {
       margin: 0px;
       font-size: 14px;
       color: ${theme.colors.text_third};
     }
   }
   :hover {
-    box-shadow: 3px 3px 10px ${theme.colors.third}66;
+    box-shadow: 4px 4px 10px ${theme.colors.third}66;
   }
 `;

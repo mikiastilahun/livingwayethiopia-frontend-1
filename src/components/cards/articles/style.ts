@@ -38,6 +38,6 @@ export const CardContainer = styled.div`
   }
   :hover {
     background-color: ${theme.colors.background_secondary};
-    box-shadow: 3px 3px 10px #015b8f22;
+    box-shadow: 3px 3px 10px ${theme.colors.third}33;
   }
 `;
