@@ -17,7 +17,7 @@ export const MainContainer = styled.div<DrawerViewType>`
   margin-left: ${(props) => (!props.view ? "100vw" : "0vw")};
   height: 100vh;
   position: fixed;
-  z-index: 1000;
+  z-index: 25;
   display: grid;
   grid-column-start: 1;
   grid-column-end: 10;

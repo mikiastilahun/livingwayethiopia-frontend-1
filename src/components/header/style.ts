@@ -27,7 +27,7 @@ export const HeaderContainer = styled.header<HeaderType>`
   right: 0;
   transition: all 0.4s ease;
   display: flex;
-  z-index: 10000000;
+  z-index: 20;
   justify-content: space-between;
   color: ${theme.colors.primary};
   background-color: ${(props) =>
