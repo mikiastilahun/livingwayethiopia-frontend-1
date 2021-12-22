@@ -15,7 +15,6 @@ const DrawerProvider: React.FC = ({ children }) => {
 
     const updateDrawer = () => {
         setOpened(!opened);
-        console.log(opened);
     };
 
     return (

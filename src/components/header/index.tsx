@@ -70,7 +70,6 @@ const Header = () => {
                                 {({ open }) => {
                                     if (navbar.about !== open)
                                         navbar.updateAbout(open)
-                                    console.log(open)
                                     return <>
                                         <Popover.Button >
                                             <NavLink active={navbar.about} onClick={() => {

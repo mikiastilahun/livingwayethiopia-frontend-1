@@ -24,7 +24,7 @@ const ServiceSection = () => {
     ]
     return (
         <ServiceContainer >
-            <Title>
+            <Title className="mb-7">
                 Service Times
             </Title>
             <InnerServiceContainer>
@@ -34,8 +34,8 @@ const ServiceSection = () => {
                             <Image src="/icons/calendar.svg" alt="calender" width={35} height={35} loading="eager" />
                         </div>
                         <div className="right">
-                            <p className='top'>{data.title}</p>
-                            <p className='bottom'>{data.detail}</p>
+                            <p className='text-xl leading-8 font-extrabold mb-3 md:mt-4'>{data.title}</p>
+                            <p className='text-sm font-thin '>{data.detail}</p>
                         </div>
                     </CardContainer>
                 })}

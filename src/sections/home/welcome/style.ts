@@ -44,13 +44,11 @@ export const LeftContainer = styled.div`
     width: 60%;
   }
   @media (max-width: ${theme.breakpoints.XMd}px) {
-    padding-top: 40px;
     width: 75%;
   }
   @media (max-width: ${theme.breakpoints.Md}px) {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
-    padding-top: 20px;
     width: 100%;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
