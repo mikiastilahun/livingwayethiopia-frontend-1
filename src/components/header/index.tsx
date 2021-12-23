@@ -16,32 +16,27 @@ const Header = () => {
     const solutions: any = [
         {
             name: 'Our History',
-            path: '##',
+            path: '/our-history',
             iconData: history,
         },
         {
             name: 'Why This Church was Created',
-            path: '##',
+            path: '/why',
             iconData: creation,
         },
         {
             name: 'Main Purpose',
-            path: '##',
-            iconData: mainPurpose,
-        }, ,
-        {
-            name: 'Our Value And Mission',
-            path: '##',
+            path: '/main-purpose',
             iconData: honor,
         },
         {
             name: 'Church Staff',
-            path: '##',
+            path: '/staff',
             iconData: staff,
         },
         {
             name: 'Member Ship Info',
-            path: '##',
+            path: '/member-ship',
             iconData: memberShip,
         },
     ];
@@ -65,14 +60,13 @@ const Header = () => {
                             </ButtonNav>
 
                         } else if (data.path === "/about-us") return (
-
                             <Popover key={index} >
                                 {({ open }) => {
                                     if (navbar.about !== open)
                                         navbar.updateAbout(open)
                                     return <>
                                         <Popover.Button >
-                                            <NavLink active={navbar.about} onClick={() => {
+                                            <NavLink active={navbar.about || router.asPath.toLocaleLowerCase().includes(data.path)} onClick={() => {
                                                 navbar.updateNavBar(data.path);
                                             }}>
                                                 {data.name}
@@ -83,7 +77,7 @@ const Header = () => {
                                             enterFrom="transform scale-95 opacity-0"
                                             enterTo="transform scale-100 opacity-100"
                                         >
-                                            <Popover.Panel className="absolute z-30 w-screen max-w-sm mt-3 transform -translate-x-1/2 left-1/2  sm:px-0 lg:max-w-4xl">
+                                            <Popover.Panel className="absolute z-50 w-screen max-w-sm mt-6 transform -translate-x-1/2 lg:left-1/2 md:left-3/4 2xl:left-2/3 sm:px-0 lg:max-w-4xl">
                                                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                                     <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
                                                         {solutions.map((item: any, index: number) => (
@@ -91,7 +85,7 @@ const Header = () => {
                                                                 key={index}
                                                                 onClick={() => {
                                                                     navbar.updateNavBar(data.path);
-                                                                    router.push(item.path, undefined, { shallow: true })
+                                                                    router.replace(`/about-us${item.path}`, undefined, { shallow: true })
                                                                 }}
                                                                 className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                                             >

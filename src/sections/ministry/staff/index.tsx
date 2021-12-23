@@ -108,7 +108,6 @@ const StaffMember = () => {
             title: "Leader",
             name: "Leader"
         },
-
     ]
     return (
         <Container >
