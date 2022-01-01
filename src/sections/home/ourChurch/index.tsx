@@ -18,7 +18,7 @@ const OurCurchSection = () => {
 
     return (
         <OurCurchContainer >
-            <Title>
+            <Title className='mb-10 mt-14'>
                 Our Church
             </Title>
             <TopContainer>

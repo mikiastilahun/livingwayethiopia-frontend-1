@@ -14,7 +14,7 @@ const Footer = () => {
                     <p className="title">
                         Address
                     </p>
-                    <p className='detailText'>
+                    <p className='detailText mt-2 mb-2'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                     </p>
                 </div>
@@ -22,7 +22,7 @@ const Footer = () => {
                     <p className="title">
                         Mail
                     </p>
-                    <p className='detailText'>
+                    <p className='detailText mt-2 mb-2'>
                         P.O. Box: 12091
                     </p>
                 </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                     <p className="title">
                         Phone Number
                     </p>
-                    <div className="multipleDetailText">
+                    <div className="multipleDetailText mt-2 mb-2">
                         <div className='left'>
                             <p className='detailText'>
                                 +25111223344
@@ -53,7 +53,7 @@ const Footer = () => {
                     <p className='title'>
                         Email Address
                     </p>
-                    <p className="detailText">
+                    <p className="detailText mt-2 mb-2">
                         @Gmail.com
                     </p>
                 </div>

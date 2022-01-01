@@ -24,7 +24,7 @@ const ServiceSection = () => {
     ]
     return (
         <ServiceContainer >
-            <Title className="mb-7">
+            <Title className="mb-10 mt-14">
                 Service Times
             </Title>
             <InnerServiceContainer>

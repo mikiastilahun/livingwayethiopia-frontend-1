@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
-import Layout from '../../components/layout'
-import { theme } from '../../styles/theme'
-const Articles: NextPage = () => {
+import Layout from '../../../components/layout'
+import { theme } from '../../../styles/theme'
+const Video: NextPage = () => {
     return (
         <Layout background={theme.colors.background} >
             jkasl
@@ -9,4 +9,4 @@ const Articles: NextPage = () => {
     )
 }
 
-export default Articles
+export default Video

@@ -49,7 +49,7 @@ const EventSection = () => {
     return (
         <>
             <EventContainer >
-                <Title className="mb-7">
+                <Title className="mb-10 mt-14">
                     Events
                 </Title>
             </EventContainer>
