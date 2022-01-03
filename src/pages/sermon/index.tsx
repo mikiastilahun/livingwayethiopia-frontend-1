@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Layout from '../../components/layout';
-import SermonSection from '../../sections/sermon';
+import SermonSection from '../../sections/sermons';
 import { theme } from '../../styles/theme';
 const Sermon: NextPage = () => {
     return (

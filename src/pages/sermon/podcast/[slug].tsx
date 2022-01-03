@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Layout from '../../../components/layout'
-import { theme } from '../../../styles/theme'
+import AudioData from '../../../sections/sermon/audio'
 const Podcast: NextPage = () => {
     return (
-        <Layout background={theme.colors.background} >
-            jkasl
+        <Layout >
+            <AudioData />
         </Layout>
     )
 }

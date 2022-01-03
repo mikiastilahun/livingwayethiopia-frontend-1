@@ -9,4 +9,8 @@ export const ArticleContainer = styled.div`
   position: relative;
   background: ${theme.colors.background_secondary};
   ${cssSnippets.padding}
+  .bodyText {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 `;
