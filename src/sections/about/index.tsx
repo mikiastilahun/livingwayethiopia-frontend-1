@@ -1,5 +1,3 @@
-import { Popover, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
 import { Container } from './style';
 
 

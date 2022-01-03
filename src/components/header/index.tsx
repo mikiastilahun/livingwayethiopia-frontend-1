@@ -106,7 +106,6 @@ const Header = () => {
                                     </>
                                 }}
                             </Popover>
-
                         )
                         else
                             return <NavLink key={index} active={router.asPath === data.path && !navbar.about} onClick={() => {

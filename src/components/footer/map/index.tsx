@@ -12,8 +12,8 @@ const MapDisplay = () => {
         loading="lazy"
         allowFullScreen={false}
         src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}
-      &q=Mexico,AddisAbaba+ET`}>
-    </iframe>
+      &q=Mexico,AddisAbaba+ET`}
+    />
 }
 
 export default MapDisplay

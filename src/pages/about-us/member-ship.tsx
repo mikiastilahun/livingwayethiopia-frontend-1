@@ -63,7 +63,7 @@ const MemberShip: NextPage = () => {
                     <div className="space-y-4">
                         {
                             faq.map((data, index) => {
-                                return <Item title={data.que}>
+                                return <Item title={data.que} key={index}>
                                     {data.ans}
                                 </Item>
                             })

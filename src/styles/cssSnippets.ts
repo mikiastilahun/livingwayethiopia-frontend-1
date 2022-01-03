@@ -28,8 +28,12 @@ const cssSnippets: CssSnippets = {
       padding-right: 2.5vw;
     }
     @media (max-width: ${theme.breakpoints.SM}px) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media (max-width: 340px) {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   `,
   select: css`
