@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Layout from '../components/layout';
-import Welcome from '../sections/home/welcome';
+import Welcome from '../sections/home/hero';
 import ServiceSection from '../sections/home/service';
 import EventSection from '../sections/home/event';
 import Vision from '../sections/home/vision';

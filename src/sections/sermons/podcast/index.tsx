@@ -12,7 +12,7 @@ const PodcastList = () => {
     ])
     return (
         <PodcastListContainer >
-            <SearchContainer>
+            {/* <SearchContainer>
 
                 <div className="searchBox">
                     <SearchFormInput placeholder='Search Podcast' type="text" />
@@ -20,7 +20,7 @@ const PodcastList = () => {
                         <Image className='image' src="/icons/search.svg" width={32.5} height={32.5} loading='eager' quality={100} />
                     </SearchBox>
                 </div>
-            </SearchContainer>
+            </SearchContainer> */}
             {podcasts.map((data, index) => {
                 return <div key={index} className='podcastCard'>
                     <PodcastCard />

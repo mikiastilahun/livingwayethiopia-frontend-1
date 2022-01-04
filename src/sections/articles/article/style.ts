@@ -13,4 +13,10 @@ export const ArticleContainer = styled.div`
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+  .imageData {
+    height: 500px;
+    @media (max-width: ${theme.breakpoints.SMd}px) {
+      height: 300px;
+    }
+  }
 `;

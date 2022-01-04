@@ -31,7 +31,7 @@ const Article = () => {
                     <span className='underline underline-offset-1 '> {dayjs(data.date).format('LL')}
                     </span>, by The Church
                 </p>
-                <div className='relative w-auto' style={{ height: 500 }}>
+                <div className='relative w-auto imageData'>
                     <Image
                         className='rounded-xl'
                         loading="lazy"

@@ -1,4 +1,5 @@
 import { SvgContainer } from './style';
+import { useRouter } from 'next/router';
 
 export default function Navigation() {
     const content = (
@@ -8,10 +9,13 @@ export default function Navigation() {
         </div>
     );
 
+    const router = useRouter();
     return (
         <SvgContainer>
             <div className='w-auto flex justify-between align-middle  sm:px-5 md:px-10' >
-                <div className='flex gap-3 align-middle justify-center left' >
+                <div className='flex gap-3 align-middle justify-center left' onClick={() => {
+                    router.back();
+                }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21.5861 11.5V12.5C21.5861 12.7761 21.3758 13 21.1163 13H5.92406L10.105 17.44C10.1939 17.5339 10.2439 17.6617 10.2439 17.795C10.2439 17.9283 10.1939 18.0561 10.105 18.15L9.43792 18.85C9.34971 18.9446 9.22964 18.9979 9.10439 18.9979C8.97913 18.9979 8.85906 18.9446 8.77085 18.85L3.00211 12.72C2.86992 12.5795 2.79557 12.3888 2.79541 12.19V11.81C2.79757 11.6116 2.87162 11.4217 3.00211 11.28L8.77085 5.14997C8.85906 5.05532 8.97913 5.00208 9.10439 5.00208C9.22964 5.00208 9.34971 5.05532 9.43792 5.14997L10.105 5.85997C10.1934 5.95214 10.2432 6.07828 10.2432 6.20997C10.2432 6.34166 10.1934 6.46781 10.105 6.55997L5.92406 11H21.1163C21.3758 11 21.5861 11.2238 21.5861 11.5Z" />
                     </svg>

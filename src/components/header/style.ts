@@ -3,6 +3,7 @@ import { theme } from "../../styles/theme";
 import Image from "next/image";
 import Link from "next/link";
 import { cssSnippets } from "../../styles/cssSnippets";
+import { useRouter } from "next/router";
 
 type HeaderType = {
   isSticky: boolean;
@@ -10,6 +11,7 @@ type HeaderType = {
 
 type NavLinkType = {
   active: boolean;
+  isSticky: boolean;
 };
 
 type FullComponentType = {
@@ -29,7 +31,6 @@ export const HeaderContainer = styled.header<HeaderType>`
   display: flex;
   z-index: 20;
   justify-content: space-between;
-  color: ${theme.colors.primary};
   background-color: ${(props) =>
     props.isSticky ? theme.colors.background_secondary : "transparent"};
   box-shadow: ${(props) =>
@@ -72,8 +73,15 @@ export const NavLink = styled.span<NavLinkType>`
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
   text-transform: capitalize;
-  color: ${(props) =>
-    props.active ? theme.colors.primary : theme.colors.text};
+  color: ${(props) => {
+    const router = useRouter();
+    if (props.active) return theme.colors.primary;
+    else {
+      if (props.isSticky) return theme.colors.text;
+      else if (router.pathname === "/") return theme.colors.white;
+      else return theme.colors.third;
+    }
+  }};
   cursor: pointer;
   text-transform: uppercase;
   :hover {

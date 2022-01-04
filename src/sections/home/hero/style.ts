@@ -7,7 +7,7 @@ export const WelcomeContainer = styled.div`
   min-width: 300px;
   width: 100vw;
   background: ${theme.colors.background_secondary};
-  padding-bottom: 200px;
+  padding-bottom: 40vh;
   @media (max-width: ${theme.breakpoints.LG}px) {
     padding-bottom: 150px;
   }
@@ -18,7 +18,6 @@ export const WelcomeContainer = styled.div`
 `;
 
 export const BackGroundImage = styled(Image)`
-  position: absolute;
   z-index: 1;
   object-fit: cover;
 `;
@@ -29,18 +28,22 @@ export const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 2;
-  padding-top: 100px;
+  padding-top: 10%;
   padding-left: 15vw;
   gap: 0px;
+  @media (min-width: 1800px) {
+    padding-top: 150px;
+  }
   @media (max-width: ${theme.breakpoints.XXL}px) {
     padding-left: 7.5vw;
+    width: 60%;
+    padding-top: 12.5%;
   }
   @media (max-width: ${theme.breakpoints.XL}px) {
     padding-left: 5vw;
   }
   @media (max-width: ${theme.breakpoints.LG}px) {
     padding-left: 2.5vw;
-    padding-top: 60px;
     width: 60%;
   }
   @media (max-width: ${theme.breakpoints.XMd}px) {
@@ -49,26 +52,29 @@ export const LeftContainer = styled.div`
   @media (max-width: ${theme.breakpoints.Md}px) {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
-    width: 100%;
+    width: 80%;
   }
   @media (max-width: ${theme.breakpoints.SM}px) {
     padding-left: 20px;
     padding-right: 20px;
+    width: 95%;
+    padding-top: 100px;
   }
   .title {
     font-style: normal;
     font-weight: bold;
     font-size: 52px;
     letter-spacing: -1px;
-    color: ${theme.colors.text};
+    color: ${theme.colors.white};
     margin-bottom: 20px;
+    line-height: 55px;
   }
   .midText {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 25px;
-    color: ${theme.colors.text};
+    color: ${theme.colors.white};
   }
   .buttonContainer {
     margin-top: 20px;
@@ -87,7 +93,7 @@ export const ButtonContainer = styled.button`
   border: 0px;
   border-radius: 9px;
   height: 55px;
-  background: ${theme.colors.secondary};
+  background: ${theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,12 +104,12 @@ export const ButtonContainer = styled.button`
     font-weight: 400;
     font-size: 20px;
     text-align: center;
-    color: #ffffff;
+    color: ${theme.colors.white};
   }
 `;
 
 export const HallowButton = styled.button`
-  border: 2px solid ${theme.colors.secondary};
+  border: 2px solid ${theme.colors.white};
   box-sizing: border-box;
   height: 55px;
   border-radius: 9px;
@@ -117,6 +123,6 @@ export const HallowButton = styled.button`
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.white};
   }
 `;

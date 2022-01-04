@@ -45,7 +45,7 @@ const MainPurpose: NextPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="lg:text-center">
                         <h2 className="text-3xl font-bold tracking-wide uppercase" style={{ color: theme.colors.primary }}>Main Purpose</h2>
-                        <p className="mt-4 max-w-2xl text-xl  lg:mx-auto" style={{ color: theme.colors.text }}>
+                        <p className="mt-4 max-w-2xl text-xl text-left lg:mx-auto" style={{ color: theme.colors.text }}>
                             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
                             accusamus quisquam. Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
                             accusamus quisquam. Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in

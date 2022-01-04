@@ -32,7 +32,7 @@ const AudioData = () => {
                     </span>, by The Church
                 </p>
                 <div className='w-auto mx-0 lg:mx-20'>
-                    <div className='relative overflow-hidden' style={{ width: "100%", height: 400, background: theme.colors.background, borderTopLeftRadius: 9, borderTopRightRadius: 9 }}>
+                    <div className='relative overflow-hidden imageData' style={{ width: "100%", background: theme.colors.background, borderTopLeftRadius: 9, borderTopRightRadius: 9 }}>
                         <Image
                             loading="lazy"
                             placeholder="blur"
@@ -42,7 +42,7 @@ const AudioData = () => {
                             alt="podcast-Image"
                         />
                     </div>
-                    <div className='w-auto py-5 px-1 sm:px-5' style={{ background: theme.colors.background, borderBottomLeftRadius: 9, borderBottomRightRadius: 9 }}>
+                    <div className='w-auto py-5 px-0 sm:px-2' style={{ background: theme.colors.background, borderBottomLeftRadius: 9, borderBottomRightRadius: 9 }}>
                         <audio controls style={{ width: "100%", borderRadius: 0, }}>
                             <source src={data.audio} type="audio/mpeg" />
                             Your browser does not support the audio element.

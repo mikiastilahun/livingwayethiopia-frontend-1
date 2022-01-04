@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeaderContainer, Logo, Detail, FullScreenComponent, MobileScreenComponent, NavLink, ButtonNav } from './style';
 import { useNavBar } from '../../contexts/navbar';
 import LogoContainer from '../logo';
@@ -40,6 +40,12 @@ const Header = () => {
             iconData: memberShip,
         },
     ];
+    const [live, setLive] = useState<boolean>(false);
+    useEffect(() => {
+        setLive(false);
+        return () => {
+        }
+    }, [])
     return (
         <HeaderContainer isSticky={navbar.isSticky}>
             <Logo>
@@ -48,25 +54,14 @@ const Header = () => {
             <Detail>
                 <FullScreenComponent center={true}>
                     {navbar.paths.map((data, index) => {
-                        if (data.button) {
-                            return <ButtonNav key={index} >
-                                <div className="border" />
-                                <button className='buttonContainer'>
-                                    {data.name}
-                                    <div style={{ width: 20, height: 20 }}>
-                                        <Image loading="eager" width={20} height={20} src="/icons/live.svg" alt="live" />
-                                    </div>
-                                </button>
-                            </ButtonNav>
-
-                        } else if (data.path === "/about-us") return (
+                        if (data.path === "/about-us") return (
                             <Popover key={index} >
                                 {({ open }) => {
                                     if (navbar.about !== open)
                                         navbar.updateAbout(open)
                                     return <>
                                         <Popover.Button >
-                                            <NavLink active={navbar.about || router.asPath.toLocaleLowerCase().includes(data.path)} onClick={() => {
+                                            <NavLink isSticky={navbar.isSticky} active={navbar.about || router.asPath.toLocaleLowerCase().includes(data.path)} onClick={() => {
                                                 navbar.updateNavBar(data.path);
                                             }}>
                                                 {data.name}
@@ -107,13 +102,26 @@ const Header = () => {
                                 }}
                             </Popover>
                         )
-                        else
-                            return <NavLink key={index} active={router.asPath === data.path && !navbar.about} onClick={() => {
+                        else if (!data.button)
+                            return <NavLink isSticky={navbar.isSticky} key={index} active={router.asPath === data.path && !navbar.about} onClick={() => {
                                 navbar.updateNavBar(data.path);
                                 router.push(data.path, undefined, { shallow: true })
                             }}>
                                 {data.name}
                             </NavLink>
+                        else if (data.button && live) {
+                            return <ButtonNav key={index} >
+                                <div className="border" />
+                                <button className='buttonContainer'>
+                                    {data.name}
+                                    <div style={{ width: 20, height: 20 }}>
+                                        <Image loading="eager" width={20} height={20} src="/icons/live.svg" alt="live" />
+                                    </div>
+                                </button>
+                            </ButtonNav>
+
+                        }
+
                     })}
                 </FullScreenComponent>
                 <MobileScreenComponent>
@@ -171,15 +179,6 @@ const creation = () => {
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect opacity="0.5" width="48" height="48" rx="5" fill="#FFEDD5" />
             <path d="M26.121 22.48C25.9335 22.2925 25.6792 22.1872 25.414 22.1872C25.1488 22.1872 24.8945 22.2925 24.707 22.48L24 23.186C23.8155 23.377 23.5948 23.5294 23.3508 23.6342C23.1068 23.739 22.8444 23.7942 22.5788 23.7965C22.3132 23.7988 22.0499 23.7482 21.8041 23.6476C21.5583 23.5471 21.335 23.3986 21.1472 23.2108C20.9594 23.023 20.8109 22.7997 20.7103 22.5539C20.6098 22.3081 20.5592 22.0447 20.5615 21.7792C20.5638 21.5136 20.619 21.2512 20.7238 21.0072C20.8286 20.7632 20.981 20.5425 21.172 20.358L26.802 14.726C28.1349 14.4228 29.5295 14.5476 30.7874 15.0826C32.0454 15.6175 33.1026 16.5355 33.8089 17.7059C34.5151 18.8763 34.8344 20.2395 34.7213 21.6018C34.6082 22.9641 34.0685 24.2561 33.179 25.294L31.071 27.429L26.121 22.479V22.48ZM15.161 16.468C16.1957 15.4334 17.5492 14.778 19.0026 14.6078C20.4559 14.4375 21.9242 14.7625 23.17 15.53L19.757 18.944C19.0178 19.6817 18.5964 20.6793 18.5829 21.7235C18.5694 22.7678 18.9649 23.7759 19.6848 24.5325C20.4047 25.2891 21.3919 25.7341 22.4355 25.7725C23.4792 25.8109 24.4965 25.4396 25.27 24.738L25.414 24.601L29.657 28.843L25.414 33.086C25.0389 33.4609 24.5303 33.6716 24 33.6716C23.4697 33.6716 22.961 33.4609 22.586 33.086L15.16 25.66C13.9411 24.441 13.2564 22.7878 13.2564 21.064C13.2564 19.3402 13.9411 17.687 15.16 16.468H15.161Z" fill="#FDBA74" />
-        </svg>
-
-    )
-}
-const mainPurpose = () => {
-    return (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect opacity="0.5" width="48" height="48" rx="5" fill="#FFEDD5" />
-            <path d="M29 27.245V34.117C29 34.2055 28.9766 34.2924 28.932 34.3688C28.8875 34.4452 28.8235 34.5085 28.7465 34.5521C28.6696 34.5957 28.5824 34.6181 28.4939 34.6171C28.4055 34.616 28.3189 34.5915 28.243 34.546L24 32L19.757 34.546C19.681 34.5915 19.5944 34.616 19.5058 34.6171C19.4173 34.6181 19.33 34.5956 19.253 34.5519C19.176 34.5081 19.112 34.4447 19.0676 34.3682C19.0231 34.2916 18.9998 34.2046 19 34.116V27.246C17.7061 26.2101 16.766 24.7979 16.3095 23.2045C15.8529 21.6112 15.9026 19.9154 16.4515 18.3515C17.0004 16.7876 18.0216 15.4328 19.3738 14.4743C20.726 13.5158 22.3425 13.001 24 13.001C25.6575 13.001 27.274 13.5158 28.6262 14.4743C29.9784 15.4328 30.9996 16.7876 31.5485 18.3515C32.0974 19.9154 32.1471 21.6112 31.6905 23.2045C31.234 24.7979 30.2939 26.2101 29 27.246V27.245ZM21 28.418V31.468L24 29.668L27 31.468V28.418C26.0468 28.8035 25.0282 29.0011 24 29C22.9718 29.0011 21.9532 28.8035 21 28.418V28.418ZM24 27C25.5913 27 27.1174 26.3679 28.2426 25.2426C29.3679 24.1174 30 22.5913 30 21C30 19.4087 29.3679 17.8826 28.2426 16.7574C27.1174 15.6321 25.5913 15 24 15C22.4087 15 20.8826 15.6321 19.7574 16.7574C18.6321 17.8826 18 19.4087 18 21C18 22.5913 18.6321 24.1174 19.7574 25.2426C20.8826 26.3679 22.4087 27 24 27V27Z" fill="#FDBA74" />
         </svg>
 
     )
