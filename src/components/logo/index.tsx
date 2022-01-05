@@ -4,7 +4,9 @@ import { LogoImage } from './style';
 
 export default function LogoContainer() {
     return (
-        <Link passHref={true} href={'/'}>
+        <Link
+            href="/" replace
+        >
             <Image
                 loading="eager"
                 src="/icons/logo.svg"

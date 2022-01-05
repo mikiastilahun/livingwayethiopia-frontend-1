@@ -23,7 +23,7 @@ const PodcastCard = () => {
             <p className='podcastDescription'>
                 Lorem ipsum dolor sit amet, consec
             </p>
-            <DateComponent />
+            <DateComponent date={`${new Date().toISOString}`} />
         </div>
     </PodcastCardContainer>
 

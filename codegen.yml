@@ -1,0 +1,6 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT}
+generates:
+  ./src/types/strapi.ts:
+    plugins:
+      - 'typescript'

@@ -5,12 +5,15 @@
         "dev": "clear && next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "codegen": "dotenv graphql-codegen --config codegen.yml"
     },
     "dependencies": {
         "@headlessui/react": "^1.4.2",
         "dayjs": "^1.10.7",
         "globby": "^12.0.2",
+        "graphql": "^16.2.0",
+        "graphql-request": "^3.7.0",
         "keen-slider": "^6.3.4",
         "next": "12.0.7",
         "react": "17.0.2",
@@ -19,14 +22,19 @@
         "react-markdown": "^7.1.2",
         "react-stickynode": "^4.0.0",
         "react-waypoint": "^10.1.0",
+        "remark-gfm": "^3.0.1",
         "sharp": "^0.29.3",
         "styled-components": "^5.3.3"
     },
     "devDependencies": {
+        "@graphql-codegen/cli": "^2.3.1",
+        "@graphql-codegen/typescript": "^2.4.2",
         "@types/prettier": "^2.4.2",
         "@types/react-stickynode": "^4.0.0",
         "@types/styled-components": "^5.1.15",
         "autoprefixer": "^10.4.0",
+        "babel-plugin-styled-components": "^2.0.2",
+        "dotenv-cli": "^4.1.1",
         "eslint": "8.4.1",
         "eslint-config-next": "12.0.7",
         "postcss": "^8.4.5",
