@@ -4,7 +4,7 @@ import { BottomPart, TopImage, TopPart, VisionContainer, } from './style';
 
 
 
-const Vision = () => {
+const Vision = ({ vision, mission }: { vision: string, mission: string }) => {
     return (
         <VisionContainer >
             <TopPart>
@@ -27,7 +27,7 @@ const Vision = () => {
                     OUR VISION
                 </p>
                 <p className='subText'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    {vision}
                 </p>
             </BottomPart>
             <BottomPart left={true}>
@@ -35,7 +35,7 @@ const Vision = () => {
                     OUR MISSION
                 </p>
                 <p className='subText'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    {mission}
                 </p>
             </BottomPart>
         </VisionContainer>

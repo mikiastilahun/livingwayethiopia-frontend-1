@@ -206,21 +206,21 @@ export type ComponentHomepageMissionAndVisionInput = {
 
 export type ComponentHomepageServiceTime = {
   __typename?: 'ComponentHomepageServiceTime';
-  describtion?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   title?: Maybe<Scalars['String']>;
 };
 
 export type ComponentHomepageServiceTimeFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<ComponentHomepageServiceTimeFiltersInput>>>;
-  describtion?: InputMaybe<StringFilterInput>;
+  description?: InputMaybe<StringFilterInput>;
   not?: InputMaybe<ComponentHomepageServiceTimeFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentHomepageServiceTimeFiltersInput>>>;
   title?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentHomepageServiceTimeInput = {
-  describtion?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   title?: InputMaybe<Scalars['String']>;
 };
