@@ -9,7 +9,6 @@ import { request, gql } from 'graphql-request';
 import { HomepageEntity } from '../types/strapi';
 
 const Home = ({ homePage }: { homePage: HomepageEntity }) => {
-  console.log(homePage);
   return (
     <Layout>
       <Welcome hero={homePage.attributes?.heroImage?.data?.attributes?.url!} />

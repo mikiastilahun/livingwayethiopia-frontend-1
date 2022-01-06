@@ -23,8 +23,8 @@ export type Scalars = {
 export type AboutUs = {
   __typename?: 'AboutUs';
   MembershipInfo?: Maybe<Array<Maybe<ComponentQuestionAndAnswerQAndA>>>;
+  churchCreation?: Maybe<Scalars['String']>;
   churchStaff?: Maybe<Array<Maybe<ComponentMinistryStaff>>>;
-  churshCreation?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['DateTime']>;
   history?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
@@ -74,8 +74,8 @@ export type AboutUsEntityResponse = {
 
 export type AboutUsInput = {
   MembershipInfo?: InputMaybe<Array<InputMaybe<ComponentQuestionAndAnswerQAndAInput>>>;
+  churchCreation?: InputMaybe<Scalars['String']>;
   churchStaff?: InputMaybe<Array<InputMaybe<ComponentMinistryStaffInput>>>;
-  churshCreation?: InputMaybe<Scalars['String']>;
   history?: InputMaybe<Scalars['String']>;
   mainPurpose?: InputMaybe<Scalars['String']>;
   missionAndValues?: InputMaybe<Array<InputMaybe<ComponentGlobalRepeatableTextInput>>>;

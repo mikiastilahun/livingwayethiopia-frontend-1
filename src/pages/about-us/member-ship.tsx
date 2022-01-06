@@ -1,31 +1,10 @@
-import type { NextPage } from 'next'
 import { useState } from 'react';
 import Layout from '../../components/layout';
-const MemberShip: NextPage = () => {
-    const faq: { que: string, ans: string }[] = [
-        {
-            que: "Lorem ipsum dolor sit amet, consectetur adipi",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: " adipiscing elit, sed do eiusmod tempor ",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: "smod tempor incididunt ut labore et dolore",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: "tempor incididunt ut labore et dolore magna aliqu",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: " adipiscing elit, sed do eiusmod tempor ",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: "smod tempor incididunt ut labore et dolore",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }, {
-            que: "tempor incididunt ut labore et dolore magna aliqu",
-            ans: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-        }
-    ];
+import { request, gql } from 'graphql-request';
+import { AboutUsEntity } from '../../types/strapi';
+
+const MemberShip = ({ aboutUs }: { aboutUs: AboutUsEntity }) => {
+
     return (
         <Layout>
             <div className="sm:mt-2 md:mt-9 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
@@ -62,9 +41,9 @@ const MemberShip: NextPage = () => {
                     </div>
                     <div className="space-y-4">
                         {
-                            faq.map((data, index) => {
-                                return <Item title={data.que} key={index}>
-                                    {data.ans}
+                            aboutUs.attributes?.MembershipInfo?.map((data, index) => {
+                                return <Item title={data?.question!} key={index}>
+                                    {data?.answer!}
                                 </Item>
                             })
                         }
@@ -113,3 +92,34 @@ const Item = ({ title, children }: { title: string, children: string, }) => {
         </div>
     );
 };
+
+
+
+export async function getStaticProps({ }) {
+    const query = gql`
+        query AboutUs($locale: I18NLocaleCode) {
+            aboutUs(locale: $locale) {
+                data {
+                    attributes {
+                        MembershipInfo {
+                            answer
+                            question
+                        }
+                    }
+                }
+            }
+        }
+    `
+    const variables = {
+        "locale": "en",
+    }
+    const data = await request(
+        process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
+    return {
+        props: {
+            aboutUs: data.aboutUs.data,
+        },
+        revalidate: 3600,
+    };
+}
+
