@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import { Container, ImageContainer } from './style';
 import { theme } from '../../../styles/theme';
+import { ComponentMinistryStaff, Maybe } from '../../../types/strapi';
 
 
-const StaffMember = ({ staff }: { staff: { image: string, name: string, title: string }[] }) => {
+const StaffMember = ({ staff }: { staff: Maybe<ComponentMinistryStaff>[] }) => {
     return (
         <Container >
             <p className='text-3xl py-3 font-thin' style={{ color: theme.colors.text }}>
@@ -18,19 +19,19 @@ const StaffMember = ({ staff }: { staff: { image: string, name: string, title: s
                             <ImageContainer
                                 loading='lazy'
                                 placeholder="blur"
-                                blurDataURL={data.image}
+                                blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + data?.avatar?.data?.attributes?.url!}
                                 layout='fill'
                                 alt="profile"
                                 quality={100}
-                                src={data.image}
+                                src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + data?.avatar?.data?.attributes?.url!}
                             />
                         </div>
                         <div className="mt-2 text-center flex flex-col">
                             <span className=" text-lg font-bold" style={{ color: theme.colors.text }}>
-                                {data.name}
+                                {data?.name}
                             </span>
                             <span className="text-xs" style={{ color: "#343D48" }}>
-                                {data.title}
+                                {data?.title}
                             </span>
                         </div>
                     </div>

@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import { Container, ImageBoxContainer, ImageContainer, BiggerImageBoxContainer } from './style';
 import { theme } from '../../../styles/theme';
+import { ComponentMinistryImageWithTitle, Maybe } from '../../../types/strapi';
 
 
-const Community = ({ communityOutReach }: { communityOutReach: { image: string, title: string }[] }) => {
+const Community = ({ communityOutReach }: { communityOutReach: Maybe<ComponentMinistryImageWithTitle>[] }) => {
     return (
         <Container >
             <p className='text-3xl py-3 font-thin' style={{ color: theme.colors.text }}>
@@ -18,11 +19,11 @@ const Community = ({ communityOutReach }: { communityOutReach: { image: string, 
                             <ImageContainer
                                 loading='lazy'
                                 placeholder="blur"
-                                blurDataURL={communityOutReach[0].image}
+                                blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[0].image?.data?.attributes?.url!}
                                 layout='fill'
                                 alt="profile"
                                 quality={100}
-                                src={communityOutReach[0].image}
+                                src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[0].image?.data?.attributes?.url!}
                             />
                         </ImageBoxContainer>
                         <div className="mt-2 text-start flex flex-col">
@@ -36,11 +37,11 @@ const Community = ({ communityOutReach }: { communityOutReach: { image: string, 
                             <ImageContainer
                                 loading='lazy'
                                 placeholder="blur"
-                                blurDataURL={communityOutReach[1].image}
+                                blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[1].image?.data?.attributes?.url!}
                                 layout='fill'
                                 alt="profile"
                                 quality={100}
-                                src={communityOutReach[1].image}
+                                src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[1].image?.data?.attributes?.url!}
                             />
                         </ImageBoxContainer>
                         <div className="mt-2 text-start flex flex-col ">
@@ -55,11 +56,11 @@ const Community = ({ communityOutReach }: { communityOutReach: { image: string, 
                         <ImageContainer
                             loading='lazy'
                             placeholder="blur"
-                            blurDataURL={communityOutReach[2].image}
+                            blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[2].image?.data?.attributes?.url!}
                             layout='fill'
                             alt="profile"
                             quality={100}
-                            src={communityOutReach[2].image}
+                            src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[2].image?.data?.attributes?.url!}
                         />
                     </BiggerImageBoxContainer>
                     <div className="mt-2 text-start flex flex-col py-2">
@@ -74,11 +75,11 @@ const Community = ({ communityOutReach }: { communityOutReach: { image: string, 
                             <ImageContainer
                                 loading='lazy'
                                 placeholder="blur"
-                                blurDataURL={communityOutReach[3].image}
+                                blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[3].image?.data?.attributes?.url!}
                                 layout='fill'
                                 alt="profile"
                                 quality={100}
-                                src={communityOutReach[3].image}
+                                src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[3].image?.data?.attributes?.url!}
                             />
                         </ImageBoxContainer>
                         <div className="mt-2 text-start flex flex-col">
@@ -92,11 +93,11 @@ const Community = ({ communityOutReach }: { communityOutReach: { image: string, 
                             <ImageContainer
                                 loading='lazy'
                                 placeholder="blur"
-                                blurDataURL={communityOutReach[4].image}
+                                blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[4].image?.data?.attributes?.url!}
                                 layout='fill'
                                 alt="profile"
                                 quality={100}
-                                src={communityOutReach[4].image}
+                                src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + communityOutReach[4].image?.data?.attributes?.url!}
                             />
                         </ImageBoxContainer>
                         <div className="mt-2 text-start flex flex-col ">

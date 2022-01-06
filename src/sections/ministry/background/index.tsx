@@ -6,8 +6,12 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import { Container, ImageContainer, SliderContainer } from './style';
 import { theme } from '../../../styles/theme';
+import { Maybe } from '../../../types/strapi';
 
-interface backgroundType { image: string, text: string, }
+interface backgroundType {
+    image: string | undefined;
+    text: Maybe<string> | undefined;
+}
 const BackgroundInfo = ({ background }: { background: backgroundType }) => {
 
     return (
@@ -27,11 +31,11 @@ const BackgroundInfo = ({ background }: { background: backgroundType }) => {
                         <ImageContainer
                             loading='lazy'
                             placeholder="blur"
-                            blurDataURL={background.image}
+                            blurDataURL={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + background.image!}
                             layout='fill'
                             alt="background image data"
                             quality={100}
-                            src={background.image}
+                            src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + background.image!}
                         />
                     </div>
                 </div>
