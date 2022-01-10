@@ -128,13 +128,19 @@ export const ButtonNav = styled.div`
 export const MobileScreenComponent = styled.div`
   justify-self: center;
   align-self: center;
+  overflow: hidden;
   @media (min-width: 920px) {
     display: none;
   }
-  svg {
-    fill: ${theme.colors.secondary};
+  .navBar {
+    overflow: hidden;
+    svg {
+      fill: ${theme.colors.secondary};
+    }
     :hover {
-      fill: ${theme.colors.primary};
+      svg {
+        fill: ${theme.colors.primary};
+      }
     }
   }
 `;

@@ -101,7 +101,7 @@ const Header = () => {
                     })}
                 </FullScreenComponent>
                 <MobileScreenComponent>
-                    <div className='' onClick={() => {
+                    <div className='navBar' onClick={() => {
                         navbar.updateDrawerView();
                     }}>
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
@@ -110,7 +110,6 @@ const Header = () => {
                             </g>
                         </svg >
                     </div>
-
                 </MobileScreenComponent>
             </Detail>
         </HeaderContainer>
