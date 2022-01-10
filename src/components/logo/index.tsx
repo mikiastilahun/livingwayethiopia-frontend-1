@@ -5,7 +5,7 @@ import { LogoImage } from './style';
 export default function LogoContainer() {
     return (
         <Link
-            href="/" replace
+            href="/" passHref
         >
             <Image
                 loading="eager"

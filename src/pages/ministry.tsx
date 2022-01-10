@@ -6,11 +6,11 @@ import { request, gql } from 'graphql-request';
 import { MinistryEntity } from '../types/strapi';
 
 const Ministry = ({ ministry }: { ministry: MinistryEntity }) => {
-    return (
-        <Layout>
-            <MinistryContainer ministryData={ministry} />
-        </Layout>
-    )
+  return (
+    <Layout>
+      <MinistryContainer ministryData={ministry} />
+    </Layout>
+  )
 }
 
 export default Ministry
@@ -18,7 +18,7 @@ export default Ministry
 
 
 export async function getStaticProps({ }) {
-    const query = gql`
+  const query = gql`
 query Query($locale: I18NLocaleCode) {
   ministry(locale: $locale) {
     data {
@@ -115,16 +115,16 @@ query Query($locale: I18NLocaleCode) {
   }
 }
     `
-    const variables = {
-        "locale": "en",
-    }
-    const data = await request(
-        process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
-    return {
-        props: {
-            ministry: data.ministry.data,
-        },
-        revalidate: 3600,
-    };
+  const variables = {
+    "locale": process.env.NEXT_PUBLIC_LANGUAGE,
+  }
+  const data = await request(
+    process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
+  return {
+    props: {
+      ministry: data.ministry.data,
+    },
+    revalidate: 3600,
+  };
 }
 

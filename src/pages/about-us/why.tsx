@@ -7,7 +7,7 @@ import { AboutUsEntity } from '../../types/strapi';
 const Why = ({ aboutUs }: { aboutUs: AboutUsEntity }) => {
     return (
         <Layout>
-            <WhyContainer detail={aboutUs.attributes?.churchCreation!} />
+            <WhyContainer detail={aboutUs?.attributes?.churchCreation!} />
         </Layout>
     )
 }
@@ -29,7 +29,7 @@ export async function getStaticProps({ }) {
         }
     `
     const variables = {
-        "locale": "en",
+        "locale": process.env.NEXT_PUBLIC_LANGUAGE,
     }
     const data = await request(
         process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)

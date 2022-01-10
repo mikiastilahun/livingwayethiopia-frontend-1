@@ -29,16 +29,11 @@ export async function getStaticPaths() {
 
     const res = await request(
         process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, {
-        "locale": "am"
+        "locale": process.env.NEXT_PUBLIC_LANGUAGE,
     })
-    const res1 = await request(
-        process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, {
-        "locale": "en"
-    })
-    let articles = [...res.articles.data, ...res1.articles.data];
 
     // Get the paths we want to pre-render based on posts
-    const paths = articles.map((article: ArticleEntity) => ({
+    const paths = res.articles.data.map((article: ArticleEntity) => ({
         params: { id: article.id },
     }))
 

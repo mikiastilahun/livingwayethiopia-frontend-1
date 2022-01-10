@@ -6,7 +6,6 @@ export const WelcomeContainer = styled.div`
   position: relative;
   min-width: 300px;
   width: 100vw;
-  background: ${theme.colors.background_secondary};
   padding-bottom: 40vh;
   @media (max-width: ${theme.breakpoints.LG}px) {
     padding-bottom: 150px;
@@ -27,7 +26,6 @@ export const LeftContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  z-index: 2;
   padding-top: 10%;
   padding-left: 15vw;
   gap: 0px;

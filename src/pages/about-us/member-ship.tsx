@@ -41,7 +41,7 @@ const MemberShip = ({ aboutUs }: { aboutUs: AboutUsEntity }) => {
                     </div>
                     <div className="space-y-4">
                         {
-                            aboutUs.attributes?.MembershipInfo?.map((data, index) => {
+                            aboutUs?.attributes?.MembershipInfo?.map((data, index) => {
                                 return <Item title={data?.question!} key={index}>
                                     {data?.answer!}
                                 </Item>
@@ -111,7 +111,7 @@ export async function getStaticProps({ }) {
         }
     `
     const variables = {
-        "locale": "en",
+        "locale": process.env.NEXT_PUBLIC_LANGUAGE,
     }
     const data = await request(
         process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)

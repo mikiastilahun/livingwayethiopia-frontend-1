@@ -28,8 +28,7 @@ const OurHistory = ({ aboutUs }: { aboutUs: AboutUsEntity }) => {
                             <div className="z-10 max-w-xl mb-10 md:mx-auto sm:text-left lg:max-w-2xl md:mb-12">
 
                                 <p className="text-base  md:text-lg z-10 pb-28" style={{ color: theme.colors.text }}>
-                                    {aboutUs.attributes?.history}
-
+                                    {aboutUs?.attributes?.history!}
                                 </p>
                             </div>
                         </div>
@@ -57,7 +56,7 @@ export async function getStaticProps({ }) {
         }
     `
     const variables = {
-        "locale": "en",
+        "locale": process.env.NEXT_PUBLIC_LANGUAGE,
     }
     const data = await request(
         process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)

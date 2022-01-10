@@ -18,12 +18,12 @@ const MinistryContainer = ({ ministryData }: { ministryData: MinistryEntity }) =
     }
 
     const [ministry, setMinistry] = useState({
-        staff: ministryData.attributes?.youth?.staffMember,
+        staff: ministryData?.attributes?.youth?.staffMember,
         background: {
-            image: ministryData.attributes?.youth?.InfoImage?.data?.attributes?.url,
-            text: ministryData.attributes?.youth?.BackgroundInfo
+            image: ministryData?.attributes?.youth?.InfoImage?.data?.attributes?.url,
+            text: ministryData?.attributes?.youth?.BackgroundInfo
         },
-        communityOutReach: ministryData.attributes?.youth?.communityOutReach,
+        communityOutReach: ministryData?.attributes?.youth?.communityOutReach,
     })
 
     const [current, setCurrent] = useState<CurrentTabData>(CurrentTabData.Youth)
@@ -35,12 +35,12 @@ const MinistryContainer = ({ ministryData }: { ministryData: MinistryEntity }) =
                     <TabContainer active={CurrentTabData.Youth === current} onClick={() => {
                         setCurrent(CurrentTabData.Youth)
                         setMinistry({
-                            staff: ministryData.attributes?.youth?.staffMember,
+                            staff: ministryData?.attributes?.youth?.staffMember,
                             background: {
-                                image: ministryData.attributes?.youth?.InfoImage?.data?.attributes?.url,
-                                text: ministryData.attributes?.youth?.BackgroundInfo
+                                image: ministryData?.attributes?.youth?.InfoImage?.data?.attributes?.url,
+                                text: ministryData?.attributes?.youth?.BackgroundInfo
                             },
-                            communityOutReach: ministryData.attributes?.youth?.communityOutReach,
+                            communityOutReach: ministryData?.attributes?.youth?.communityOutReach,
                         })
                     }}>
                         <p>
@@ -50,12 +50,12 @@ const MinistryContainer = ({ ministryData }: { ministryData: MinistryEntity }) =
                     <TabContainer active={CurrentTabData.Children === current} onClick={() => {
                         setCurrent(CurrentTabData.Children)
                         setMinistry({
-                            staff: ministryData.attributes?.children?.staffMember,
+                            staff: ministryData?.attributes?.children?.staffMember,
                             background: {
-                                image: ministryData.attributes?.children?.InfoImage?.data?.attributes?.url,
-                                text: ministryData.attributes?.children?.BackgroundInfo
+                                image: ministryData?.attributes?.children?.InfoImage?.data?.attributes?.url,
+                                text: ministryData?.attributes?.children?.BackgroundInfo
                             },
-                            communityOutReach: ministryData.attributes?.children?.communityOutReach,
+                            communityOutReach: ministryData?.attributes?.children?.communityOutReach,
                         })
                     }}>
                         <p>
@@ -65,12 +65,12 @@ const MinistryContainer = ({ ministryData }: { ministryData: MinistryEntity }) =
                     <TabContainer active={CurrentTabData.Senior === current} onClick={() => {
                         setCurrent(CurrentTabData.Senior)
                         setMinistry({
-                            staff: ministryData.attributes?.senior?.staffMember,
+                            staff: ministryData?.attributes?.senior?.staffMember,
                             background: {
-                                image: ministryData.attributes?.senior?.InfoImage?.data?.attributes?.url,
-                                text: ministryData.attributes?.senior?.BackgroundInfo
+                                image: ministryData?.attributes?.senior?.InfoImage?.data?.attributes?.url,
+                                text: ministryData?.attributes?.senior?.BackgroundInfo
                             },
-                            communityOutReach: ministryData.attributes?.senior?.communityOutReach,
+                            communityOutReach: ministryData?.attributes?.senior?.communityOutReach,
                         })
                     }}>
                         <p>
@@ -81,9 +81,15 @@ const MinistryContainer = ({ ministryData }: { ministryData: MinistryEntity }) =
                 <div className='divider' />
             </div>
             <div className='mb-10' />
-            <StaffMember staff={ministry.staff!} />
-            <BackgroundInfo background={ministry.background} />
-            <Community communityOutReach={ministry.communityOutReach!} />
+            {ministry.staff! &&
+                <StaffMember staff={ministry.staff!} />
+            }{
+                ministry.background! &&
+                ministry.background.text! &&
+                ministry.background.image! &&
+                <BackgroundInfo background={ministry.background} />}
+            {ministry.communityOutReach! &&
+                <Community communityOutReach={ministry.communityOutReach!} />}
         </Container>
     );
 }

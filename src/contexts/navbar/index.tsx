@@ -45,32 +45,32 @@ const NavBarProvider: React.FC = ({ children }) => {
     const [paths, setPaths] = useState<PathsType[]>([
         {
             "path": "/",
-            "name": "HOME",
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "HOME" : "amharic",
         },
         {
             "path": "/ministry",
-            "name": "MINISTRY"
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "MINISTRY" : "amharic"
         },
         {
             "path": "/articles",
-            "name": "ARTICLES"
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "ARTICLES" : "amharic"
         },
         {
             "path": "/sermon",
-            "name": "SERMON"
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "SERMON" : "amharic"
         },
         {
             "path": "/about-us",
-            "name": "ABOUT US"
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "ABOUT US" : "amharic"
         },
         {
             "path": "/support-us",
-            "name": "SUPPORT US",
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "SUPPORT US" : "amharic",
 
         },
         {
             "path": "/support us",
-            "name": "LIVE",
+            "name": process.env.NEXT_PUBLIC_LANGUAGE === "en" ? "LIVE" : "amharic",
             "button": true,
             "action": () => {
 
