@@ -7,14 +7,16 @@ export default function LogoContainer() {
         <Link
             href="/" passHref
         >
-            <Image
-                loading="eager"
-                src="/icons/logo.svg"
-                alt="Logo"
-                width={185}
-                height={40}
+            <a>
+                <Image
+                    loading="eager"
+                    src="/icons/logo.svg"
+                    alt="Logo"
+                    width={185}
+                    height={40}
 
-            />
+                />
+            </a>
         </Link>
     );
 }

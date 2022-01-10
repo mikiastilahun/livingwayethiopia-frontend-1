@@ -126,13 +126,15 @@ export const ButtonNav = styled.div`
 `;
 
 export const MobileScreenComponent = styled.div`
-  justify-self: flex-end;
-  height: 3.5vh;
-  @media (max-width: ${theme.breakpoints.SM}px) {
-    height: 4.5vh;
-  }
+  justify-self: center;
   align-self: center;
   @media (min-width: 920px) {
     display: none;
+  }
+  svg {
+    fill: ${theme.colors.secondary};
+    :hover {
+      fill: ${theme.colors.primary};
+    }
   }
 `;

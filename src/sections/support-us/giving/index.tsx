@@ -31,7 +31,7 @@ const GivingComponent = () => {
             </p>
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
                 {data.loop.map((data: any, index) => {
-                    return <div className="shadow-md rounded-2xl w-80 p-4 " style={{ background: `${theme.colors.background}` }}>
+                    return <div key={index} className="shadow-md rounded-2xl w-80 p-4 " style={{ background: `${theme.colors.background}` }}>
                         <div className="flex flex-row items-start gap-4">
                             <div className='relative rounded-md overflow-hidden' style={{ width: 100, height: 75 }} >
                                 <ImageContainer

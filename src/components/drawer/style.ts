@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,70 +13,49 @@ type FullComponentType = {
 
 export const MainContainer = styled.div<DrawerViewType>`
   width: 100vw;
-  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   margin-left: ${(props) => (!props.view ? "100vw" : "0vw")};
   height: 100vh;
+  overflow: hidden;
   position: fixed;
   z-index: 25;
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 10;
-  /* justify-items: flex-end; */
+  display: flex;
+  flex-direction: column;
   transition: all 0.4s ease;
   @media (min-width: ${theme.breakpoints.XMd}px) {
     display: none;
   }
-`;
-
-export const DrawerContainerLeft = styled.div`
   font-weight: normal;
-  grid-column-start: 1;
-  grid-column-end: 8;
-  width: Calc(100vw - ${theme.breakpoints.XXS}px);
-  height: 100vh;
-  color: transparent;
-  /* make this background darker to make feel like it is press able*/
-  background-color: transparent;
-  position: relative;
-`;
-
-export const DrawerContainer = styled.div`
-  font-weight: normal;
-  grid-column-start: 8;
-  grid-column-end: 10;
-  width: ${theme.breakpoints.XXS}px;
-  display: grid;
-  height: 100vh;
-  transition: all 0.4s ease;
-  display: grid;
-  color: ${theme.colors.primary};
   background-color: ${theme.colors.background_secondary};
-  position: relative;
 `;
 
 export const TopDrawerContainer = styled.div`
   width: 100%;
-  grid-row: 1/2;
   display: flex;
+  position: relative;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
   justify-content: space-between;
-
-  @media (min-width: ${theme.breakpoints.SM}px) {
-    img:first-of-type {
-      justify-content: end;
+  svg {
+    cursor: pointer;
+    stroke: ${theme.colors.third};
+    :hover {
+      stroke: ${theme.colors.secondary};
     }
-  }
-  img:last-of-type {
-    width: 22.5px;
-    height: 22.5px;
   }
 `;
 
 export const MidDrawerContainer = styled.div`
   width: 100%;
+  position: relative;
+  overflow-y: auto;
   grid-row: 2/100;
   display: flex;
   padding-left: 10px;
