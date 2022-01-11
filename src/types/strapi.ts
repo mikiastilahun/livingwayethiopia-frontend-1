@@ -331,6 +331,100 @@ export type ComponentSeoSeoInput = {
   title?: InputMaybe<Scalars['String']>;
 };
 
+export type ComponentSupportUsBank = {
+  __typename?: 'ComponentSupportUsBank';
+  detail?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  image?: Maybe<UploadFileEntityResponse>;
+  name?: Maybe<Scalars['String']>;
+};
+
+export type ComponentSupportUsBankFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentSupportUsBankFiltersInput>>>;
+  detail?: InputMaybe<StringFilterInput>;
+  name?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentSupportUsBankFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentSupportUsBankFiltersInput>>>;
+};
+
+export type ComponentSupportUsBankInput = {
+  detail?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<Scalars['ID']>;
+  name?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentSupportUsGiving = {
+  __typename?: 'ComponentSupportUsGiving';
+  bank?: Maybe<Array<Maybe<ComponentSupportUsBank>>>;
+  detail?: Maybe<Scalars['String']>;
+  heroImage?: Maybe<UploadFileEntityResponse>;
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentSupportUsGivingBankArgs = {
+  filters?: InputMaybe<ComponentSupportUsBankFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentSupportUsGivingInput = {
+  bank?: InputMaybe<Array<InputMaybe<ComponentSupportUsBankInput>>>;
+  detail?: InputMaybe<Scalars['String']>;
+  heroImage?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentSupportUsPartner = {
+  __typename?: 'ComponentSupportUsPartner';
+  coverImage?: Maybe<UploadFileEntityResponse>;
+  description?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentSupportUsPartnerFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentSupportUsPartnerFiltersInput>>>;
+  description?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentSupportUsPartnerFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentSupportUsPartnerFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentSupportUsPartnerInput = {
+  coverImage?: InputMaybe<Scalars['ID']>;
+  description?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentSupportUsPartnerShip = {
+  __typename?: 'ComponentSupportUsPartnerShip';
+  detail?: Maybe<Scalars['String']>;
+  heroImage?: Maybe<UploadFileEntityResponse>;
+  id: Scalars['ID'];
+  partnership?: Maybe<Array<Maybe<ComponentSupportUsPartner>>>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentSupportUsPartnerShipPartnershipArgs = {
+  filters?: InputMaybe<ComponentSupportUsPartnerFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentSupportUsPartnerShipInput = {
+  detail?: InputMaybe<Scalars['String']>;
+  heroImage?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
+  partnership?: InputMaybe<Array<InputMaybe<ComponentSupportUsPartnerInput>>>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
 export type DateTimeFilterInput = {
   and?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
   between?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
@@ -383,73 +477,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = AboutUs | Article | ComponentGlobalRepeatableText | ComponentHomepageMissionAndVision | ComponentHomepageServiceTime | ComponentMinistryImageWithTitle | ComponentMinistryMinistry | ComponentMinistryStaff | ComponentQuestionAndAnswerQAndA | ComponentSeoSeo | Global | Homepage | I18NLocale | Ministry | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
-
-export type Global = {
-  __typename?: 'Global';
-  address?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email?: Maybe<Array<Maybe<ComponentGlobalRepeatableText>>>;
-  facebook?: Maybe<Scalars['String']>;
-  instagram?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-  localizations?: Maybe<GlobalRelationResponseCollection>;
-  logo?: Maybe<UploadFileEntityResponse>;
-  mail?: Maybe<Scalars['String']>;
-  phoneNumber?: Maybe<Array<Maybe<ComponentGlobalRepeatableText>>>;
-  publishedAt?: Maybe<Scalars['DateTime']>;
-  twitter?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['DateTime']>;
-  youtube?: Maybe<Scalars['String']>;
-};
-
-
-export type GlobalEmailArgs = {
-  filters?: InputMaybe<ComponentGlobalRepeatableTextFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-export type GlobalLocalizationsArgs = {
-  publicationState?: InputMaybe<PublicationState>;
-};
-
-
-export type GlobalPhoneNumberArgs = {
-  filters?: InputMaybe<ComponentGlobalRepeatableTextFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type GlobalEntity = {
-  __typename?: 'GlobalEntity';
-  attributes?: Maybe<Global>;
-  id?: Maybe<Scalars['ID']>;
-};
-
-export type GlobalEntityResponse = {
-  __typename?: 'GlobalEntityResponse';
-  data?: Maybe<GlobalEntity>;
-};
-
-export type GlobalInput = {
-  address?: InputMaybe<Scalars['String']>;
-  email?: InputMaybe<Array<InputMaybe<ComponentGlobalRepeatableTextInput>>>;
-  facebook?: InputMaybe<Scalars['String']>;
-  instagram?: InputMaybe<Scalars['String']>;
-  logo?: InputMaybe<Scalars['ID']>;
-  mail?: InputMaybe<Scalars['String']>;
-  phoneNumber?: InputMaybe<Array<InputMaybe<ComponentGlobalRepeatableTextInput>>>;
-  publishedAt?: InputMaybe<Scalars['DateTime']>;
-  twitter?: InputMaybe<Scalars['String']>;
-  youtube?: InputMaybe<Scalars['String']>;
-};
-
-export type GlobalRelationResponseCollection = {
-  __typename?: 'GlobalRelationResponseCollection';
-  data: Array<GlobalEntity>;
-};
+export type GenericMorph = AboutUs | Article | ComponentGlobalRepeatableText | ComponentHomepageMissionAndVision | ComponentHomepageServiceTime | ComponentMinistryImageWithTitle | ComponentMinistryMinistry | ComponentMinistryStaff | ComponentQuestionAndAnswerQAndA | ComponentSeoSeo | ComponentSupportUsBank | ComponentSupportUsGiving | ComponentSupportUsPartner | ComponentSupportUsPartnerShip | Homepage | I18NLocale | Ministry | SupportUs | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Homepage = {
   __typename?: 'Homepage';
@@ -668,9 +696,9 @@ export type Mutation = {
   createAboutUsLocalization?: Maybe<AboutUsEntityResponse>;
   createArticle?: Maybe<ArticleEntityResponse>;
   createArticleLocalization?: Maybe<ArticleEntityResponse>;
-  createGlobalLocalization?: Maybe<GlobalEntityResponse>;
   createHomepageLocalization?: Maybe<HomepageEntityResponse>;
   createMinistryLocalization?: Maybe<MinistryEntityResponse>;
+  createSupportUsLocalization?: Maybe<SupportUsEntityResponse>;
   createUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Create a new role */
   createUsersPermissionsRole?: Maybe<UsersPermissionsCreateRolePayload>;
@@ -678,9 +706,9 @@ export type Mutation = {
   createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
   deleteAboutUs?: Maybe<AboutUsEntityResponse>;
   deleteArticle?: Maybe<ArticleEntityResponse>;
-  deleteGlobal?: Maybe<GlobalEntityResponse>;
   deleteHomepage?: Maybe<HomepageEntityResponse>;
   deleteMinistry?: Maybe<MinistryEntityResponse>;
+  deleteSupportUs?: Maybe<SupportUsEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Delete an existing role */
   deleteUsersPermissionsRole?: Maybe<UsersPermissionsDeleteRolePayload>;
@@ -700,9 +728,9 @@ export type Mutation = {
   updateAboutUs?: Maybe<AboutUsEntityResponse>;
   updateArticle?: Maybe<ArticleEntityResponse>;
   updateFileInfo: UploadFileEntityResponse;
-  updateGlobal?: Maybe<GlobalEntityResponse>;
   updateHomepage?: Maybe<HomepageEntityResponse>;
   updateMinistry?: Maybe<MinistryEntityResponse>;
+  updateSupportUs?: Maybe<SupportUsEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Update an existing role */
   updateUsersPermissionsRole?: Maybe<UsersPermissionsUpdateRolePayload>;
@@ -732,13 +760,6 @@ export type MutationCreateArticleLocalizationArgs = {
 };
 
 
-export type MutationCreateGlobalLocalizationArgs = {
-  data?: InputMaybe<GlobalInput>;
-  id?: InputMaybe<Scalars['ID']>;
-  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
-};
-
-
 export type MutationCreateHomepageLocalizationArgs = {
   data?: InputMaybe<HomepageInput>;
   id?: InputMaybe<Scalars['ID']>;
@@ -748,6 +769,13 @@ export type MutationCreateHomepageLocalizationArgs = {
 
 export type MutationCreateMinistryLocalizationArgs = {
   data?: InputMaybe<MinistryInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationCreateSupportUsLocalizationArgs = {
+  data?: InputMaybe<SupportUsInput>;
   id?: InputMaybe<Scalars['ID']>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
@@ -779,17 +807,17 @@ export type MutationDeleteArticleArgs = {
 };
 
 
-export type MutationDeleteGlobalArgs = {
-  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
-};
-
-
 export type MutationDeleteHomepageArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
 
 
 export type MutationDeleteMinistryArgs = {
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationDeleteSupportUsArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
 
@@ -868,12 +896,6 @@ export type MutationUpdateFileInfoArgs = {
 };
 
 
-export type MutationUpdateGlobalArgs = {
-  data: GlobalInput;
-  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
-};
-
-
 export type MutationUpdateHomepageArgs = {
   data: HomepageInput;
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
@@ -882,6 +904,12 @@ export type MutationUpdateHomepageArgs = {
 
 export type MutationUpdateMinistryArgs = {
   data: MinistryInput;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationUpdateSupportUsArgs = {
+  data: SupportUsInput;
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
 
@@ -937,12 +965,12 @@ export type Query = {
   aboutUs?: Maybe<AboutUsEntityResponse>;
   article?: Maybe<ArticleEntityResponse>;
   articles?: Maybe<ArticleEntityResponseCollection>;
-  global?: Maybe<GlobalEntityResponse>;
   homepage?: Maybe<HomepageEntityResponse>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   me?: Maybe<UsersPermissionsMe>;
   ministry?: Maybe<MinistryEntityResponse>;
+  supportUs?: Maybe<SupportUsEntityResponse>;
   uploadFile?: Maybe<UploadFileEntityResponse>;
   uploadFiles?: Maybe<UploadFileEntityResponseCollection>;
   usersPermissionsRole?: Maybe<UsersPermissionsRoleEntityResponse>;
@@ -973,12 +1001,6 @@ export type QueryArticlesArgs = {
 };
 
 
-export type QueryGlobalArgs = {
-  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
-  publicationState?: InputMaybe<PublicationState>;
-};
-
-
 export type QueryHomepageArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
   publicationState?: InputMaybe<PublicationState>;
@@ -998,6 +1020,12 @@ export type QueryI18NLocalesArgs = {
 
 
 export type QueryMinistryArgs = {
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+
+export type QuerySupportUsArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
   publicationState?: InputMaybe<PublicationState>;
 };
@@ -1064,6 +1092,44 @@ export type StringFilterInput = {
   null?: InputMaybe<Scalars['Boolean']>;
   or?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   startsWith?: InputMaybe<Scalars['String']>;
+};
+
+export type SupportUs = {
+  __typename?: 'SupportUs';
+  Giving?: Maybe<ComponentSupportUsGiving>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  locale?: Maybe<Scalars['String']>;
+  localizations?: Maybe<SupportUsRelationResponseCollection>;
+  partnership?: Maybe<ComponentSupportUsPartnerShip>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+
+export type SupportUsLocalizationsArgs = {
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+export type SupportUsEntity = {
+  __typename?: 'SupportUsEntity';
+  attributes?: Maybe<SupportUs>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type SupportUsEntityResponse = {
+  __typename?: 'SupportUsEntityResponse';
+  data?: Maybe<SupportUsEntity>;
+};
+
+export type SupportUsInput = {
+  Giving?: InputMaybe<ComponentSupportUsGivingInput>;
+  partnership?: InputMaybe<ComponentSupportUsPartnerShipInput>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type SupportUsRelationResponseCollection = {
+  __typename?: 'SupportUsRelationResponseCollection';
+  data: Array<SupportUsEntity>;
 };
 
 export type UploadFile = {

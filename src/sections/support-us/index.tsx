@@ -1,11 +1,12 @@
 
 import React, { useState } from 'react';
+import { SupportUsEntity } from '../../types/strapi';
 import Giving from './giving';
 import PartnershipComponent from './partnerShip';
 import { Container, TabContainer, } from './style';
 
 
-const SupportUsContainer = () => {
+const SupportUsContainer = ({ supportUs }: { supportUs: SupportUsEntity }) => {
 
     enum CurrentTabData {
         Giving,
@@ -41,9 +42,12 @@ const SupportUsContainer = () => {
             <div className='mb-10' />
             <div className='bottom'>
                 {
-                    CurrentTabData.Giving === current && <Giving />
-                }  {
-                    CurrentTabData.Partnership === current && <PartnershipComponent />
+                    supportUs?.attributes?.Giving! &&
+                    CurrentTabData.Giving === current && <Giving data={supportUs?.attributes?.Giving!} />
+                }
+                {
+                    supportUs?.attributes?.partnership! &&
+                    CurrentTabData.Partnership === current && <PartnershipComponent data={supportUs?.attributes?.partnership!} />
                 }
             </div>
         </Container>

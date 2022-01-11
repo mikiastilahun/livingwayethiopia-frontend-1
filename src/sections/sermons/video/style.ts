@@ -31,7 +31,7 @@ export const VideoListContainer = styled.div`
   }
   .videoListBottom {
     min-width: 300px;
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     grid-column-gap: 20px;
     grid-row-gap: 30px;
@@ -55,10 +55,43 @@ export const VideoListContainer = styled.div`
         width: 100%;
       }
     }
+    .videoVisual {
+      height: 600px;
+      width: 100%;
+      position: relative;
+      .background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+      }
+      @media (max-width: ${theme.breakpoints.Md}px) {
+        height: 500px;
+      }
+      @media (max-width: ${theme.breakpoints.SM}px) {
+        height: 400px;
+      }
+      @media (max-width: ${theme.breakpoints.XMSM}px) {
+        height: 300px;
+      }
+
+      iframe {
+        position: absolute;
+        z-index: 15;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 `;
 
 export const HeaderImage = styled(Image)`
   z-index: 1;
   object-fit: cover;
+`;
+
+export const ImageContainer = styled(Image)`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
