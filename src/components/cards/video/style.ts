@@ -4,6 +4,7 @@ import { theme } from "../../../styles/theme";
 
 export const VideoCardContainer = styled.div`
   width: 100%;
+  height: 100%;
   cursor: pointer;
   border-radius: 9px;
   background-color: ${theme.colors.background};

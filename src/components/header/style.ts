@@ -29,7 +29,7 @@ export const HeaderContainer = styled.header<HeaderType>`
   right: 0;
   transition: all 0.4s ease;
   display: flex;
-  z-index: 20;
+  z-index: 40;
   justify-content: space-between;
   background-color: ${(props) =>
     props.isSticky ? theme.colors.background_secondary : "transparent"};

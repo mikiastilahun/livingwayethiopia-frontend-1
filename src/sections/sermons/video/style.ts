@@ -8,6 +8,7 @@ export const VideoListContainer = styled.div`
   width: 100%;
   padding-bottom: 50px;
   position: relative;
+  ${cssSnippets.padding}
   .topImage {
     width: 100%;
     height: 350px;
@@ -37,7 +38,6 @@ export const VideoListContainer = styled.div`
     grid-row-gap: 30px;
     flex-wrap: wrap;
     display: flex;
-    ${cssSnippets.padding}
     position: relative;
     .videoCard {
       margin: 0px;

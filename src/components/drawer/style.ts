@@ -23,7 +23,7 @@ export const MainContainer = styled.div<DrawerViewType>`
   height: 100vh;
   overflow: hidden;
   position: fixed;
-  z-index: 25;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
