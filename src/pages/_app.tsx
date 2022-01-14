@@ -5,6 +5,7 @@ import { DrawerProvider } from '../contexts/drawer'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { theme } from '../styles/theme'
 import '../styles/global.css'
+import { GeneralDataProvider } from '../contexts/data'
 
 const GlobalStyle = createGlobalStyle`
 `
@@ -15,10 +16,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <GlobalStyle />
 
     <ThemeProvider theme={theme}>
-      <NavBarProvider>
-        <Component {...pageProps} />
-      </NavBarProvider>
-
+      <GeneralDataProvider>
+        <NavBarProvider>
+          <Component {...pageProps} />
+        </NavBarProvider>
+      </GeneralDataProvider>
     </ThemeProvider>
   </>
 }

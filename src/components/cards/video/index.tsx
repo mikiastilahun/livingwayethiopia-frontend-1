@@ -19,10 +19,11 @@ const VideoCard = ({ data }: { data: { image: string, title: string, description
             </div>
         </div>
         <div className='videoCardBottom'>
-            <p className='videoTitle'>
+
+            <p className='text-base font-bold mb-2'>
                 {data.title}
             </p>
-            <p className='videoDescription'>
+            <p className='videoDescription mb-4 text-sm'>
                 {data.description.slice(0, 50)}{data.description.length > 50 && '...'}
             </p>
         </div>

@@ -5,6 +5,7 @@ import { SermonContainer, TabContainer } from './style';
 import AudioList from './audio';
 import PodcastList from './podcast';
 import VideoList from './video';
+import { useGeneralData } from '../../contexts/data';
 
 enum ActiveTabData {
     Podcasts,
@@ -14,39 +15,39 @@ enum ActiveTabData {
 
 
 const SermonSection = () => {
-    const [activeTab, setActiveTab] = useState<ActiveTabData>(ActiveTabData.Podcasts);
+    const { sermon, updateSermon } = useGeneralData()
     return (
         <SermonContainer >
             <div className='topPart'>
                 <div className='tabs'>
-                    <TabContainer active={ActiveTabData.Podcasts === activeTab} onClick={() => {
-                        setActiveTab(ActiveTabData.Podcasts)
+                    <TabContainer active={ActiveTabData.Podcasts === sermon} onClick={() => {
+                        updateSermon(ActiveTabData.Podcasts)
                     }}>
                         <p>
                             Podcast
                         </p>
                     </TabContainer>
-                    <TabContainer active={ActiveTabData.Videos === activeTab} onClick={() => {
-                        setActiveTab(ActiveTabData.Videos)
+                    <TabContainer active={ActiveTabData.Videos === sermon} onClick={() => {
+                        updateSermon(ActiveTabData.Videos)
                     }}>
                         <p>
                             Videos
                         </p>
                     </TabContainer>
-                    <TabContainer active={ActiveTabData.Audios === activeTab} onClick={() => {
-                        setActiveTab(ActiveTabData.Audios)
+                    {/* <TabContainer active={ActiveTabData.Audios === sermon} onClick={() => {
+                        updateSermon(ActiveTabData.Audios)
                     }}>
                         <p>
                             Audio
                         </p>
-                    </TabContainer>
+                    </TabContainer> */}
                 </div>
                 <div className='divider' />
             </div>
             <div className='sermonBottom'>
-                {ActiveTabData.Audios === activeTab && <AudioList />}
-                {ActiveTabData.Videos === activeTab && <VideoList />}
-                {ActiveTabData.Podcasts === activeTab && <PodcastList />}
+                {/* {ActiveTabData.Audios === sermon && <AudioList />} */}
+                {ActiveTabData.Videos === sermon && <VideoList />}
+                {ActiveTabData.Podcasts === sermon && <PodcastList />}
             </div>
         </SermonContainer>
     );

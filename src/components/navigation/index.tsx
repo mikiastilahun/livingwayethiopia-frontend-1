@@ -1,20 +1,16 @@
 import { SvgContainer } from './style';
 import { useRouter } from 'next/router';
 
-export default function Navigation() {
-    const content = (
-        <div>
-            <p>Content</p>
-            <p>Content</p>
-        </div>
-    );
+export default function Navigation({ routeData }: { routeData: string }) {
+
 
     const router = useRouter();
     return (
         <SvgContainer>
             <div className='w-auto flex justify-between align-middle  sm:px-5 md:px-10' >
                 <div className='flex gap-3 align-middle justify-center left' onClick={() => {
-                    router.back();
+                    router.replace(`${routeData}`, undefined, { scroll: false, shallow: true })
+
                 }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21.5861 11.5V12.5C21.5861 12.7761 21.3758 13 21.1163 13H5.92406L10.105 17.44C10.1939 17.5339 10.2439 17.6617 10.2439 17.795C10.2439 17.9283 10.1939 18.0561 10.105 18.15L9.43792 18.85C9.34971 18.9446 9.22964 18.9979 9.10439 18.9979C8.97913 18.9979 8.85906 18.9446 8.77085 18.85L3.00211 12.72C2.86992 12.5795 2.79557 12.3888 2.79541 12.19V11.81C2.79757 11.6116 2.87162 11.4217 3.00211 11.28L8.77085 5.14997C8.85906 5.05532 8.97913 5.00208 9.10439 5.00208C9.22964 5.00208 9.34971 5.05532 9.43792 5.14997L10.105 5.85997C10.1934 5.95214 10.2432 6.07828 10.2432 6.20997C10.2432 6.34166 10.1934 6.46781 10.105 6.55997L5.92406 11H21.1163C21.3758 11 21.5861 11.2238 21.5861 11.5Z" />
@@ -31,7 +27,7 @@ export default function Navigation() {
                     </svg>
 
                     <svg width="30" height="30" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => {
-                        window.open(`https://twitter.com/intent/tweet?text=An%20interesting%20article,%20I%20wanted%20to%20share%20${window.location.href}`);
+                        window.open(`https://twitter.com/intent/tweet?text=An%20interesting%20content,%20I%20wanted%20to%20share%20${window.location.href}`);
                     }}>
                         <path d="M40.1138 13.9323C41.8685 12.8158 43.1814 11.0577 43.8074 8.98642C42.1586 10.0277 40.3547 10.7612 38.4736 11.1552C35.8655 8.21877 31.7334 7.50418 28.3861 9.4107C25.0388 11.3172 23.305 15.3729 24.1535 19.3114C17.3998 18.9505 11.1076 15.555 6.84259 9.96975C4.61676 14.056 5.75421 19.2797 9.44197 21.9073C8.10844 21.8616 6.80448 21.4773 5.63882 20.7864C5.63882 20.8239 5.63882 20.8614 5.63882 20.8989C5.63959 25.1555 8.45815 28.822 12.378 29.6656C11.1411 30.0238 9.84363 30.0765 8.58465 29.8198C9.68703 33.4599 12.8391 35.9537 16.4317 36.0281C13.4562 38.5138 9.78153 39.8618 5.99897 39.8552C5.32852 39.8562 4.65859 39.8152 3.99268 39.7323C7.83378 42.3594 12.3044 43.7538 16.8702 43.7489C23.2223 43.7954 29.3269 41.13 33.8184 36.349C38.31 31.5679 40.8137 25.0703 40.7695 18.3093C40.7695 17.9218 40.7611 17.5364 40.7441 17.1531C42.3892 15.8877 43.809 14.3201 44.9368 12.5239C43.4042 13.247 41.7785 13.7217 40.1138 13.9323Z" />
                     </svg>

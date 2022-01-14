@@ -1,12 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
-import Image from "next/image";
-import { HeaderImage, ImageContainer, VideoListContainer } from './style';
+import { VideoListContainer } from './style';
 import VideoCard from '../../../components/cards/video';
-import useSWR from 'swr'
 import Loading from '../../../components/loading';
 import ErrorPage from '../../../components/error';
 import axios from "axios";
+import { useRouter } from 'next/router';
 
 
 interface dataType {
@@ -36,6 +35,7 @@ interface dataType {
 
 const VideoList = () => {
 
+    const router = useRouter();
     const [videos, setVideos] = useState<dataType[]>();
     const [nextToken, setNextToken] = useState<string>("");
     const [backToken, setBackToken] = useState<string>("");
@@ -85,7 +85,9 @@ const VideoList = () => {
             </div> */}
                 <div className='videoListBottom '>
                     {videos?.map((item: dataType, index: number) => {
-                        return <div key={index} className='videoCard'>
+                        return <div key={index} className='videoCard' onClick={() => {
+                            router.push(`sermon/video?playlist=${item.id}`, undefined, { scroll: false, shallow: true })
+                        }}>
                             <VideoCard data={{
                                 image: item.snippet.thumbnails.high.url,
                                 title: item.snippet.localized.title,
@@ -101,7 +103,7 @@ const VideoList = () => {
                             onClick={() => {
                                 getData({ token: backToken });
                             }}
-                            className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md  text-gray-700 bg-white hover:bg-gray-50"
+                            className=" cursor-pointer relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md  text-gray-700 bg-white hover:bg-gray-50"
                         >
                             Previous
                         </div>
@@ -113,7 +115,7 @@ const VideoList = () => {
                         onClick={() => {
                             getData({ token: nextToken });
                         }}
-                        className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                        className=" cursor-pointer ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                     >
                         Next
                     </div>}

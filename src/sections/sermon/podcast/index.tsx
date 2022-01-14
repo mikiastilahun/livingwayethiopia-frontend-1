@@ -20,7 +20,7 @@ const AudioData = () => {
     };
     return (
         <PodcastContainer className='mt-20' >
-            <Navigation />
+            <Navigation routeData='/sermon' />
             <div className='px-0 md:px-10'>
 
                 <p className='text-4xl font-extrabold mt-4'>

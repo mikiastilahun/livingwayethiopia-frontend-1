@@ -32,7 +32,8 @@ const ArticleSection = ({ article }: { article: ArticleEntity }) => {
     }
     return (
         <ArticleContainer className='mt-20' >
-            <Navigation />
+
+            <Navigation routeData='/articles' />
             <div className='px-0 md:px-10'>
 
                 <p className='text-4xl font-extrabold mt-4'>
