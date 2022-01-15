@@ -2,28 +2,33 @@ import React from "react";
 import Image from "next/image";
 import { PodcastCardContainer, } from './style';
 import DateComponent from '../../dateComponent';
+import ReactHtmlParser from 'react-html-parser';
 
-const PodcastCard = () => {
-    return <PodcastCardContainer>
-        <div className='imageContainer'>
+const PodcastCard = ({ image, description, title, date }: { image?: string, description: string, title: string, date: string, }) => {
+    let detail = description.slice(0, 100) + (description.length > 100 ? "..." : "");
+    return <PodcastCardContainer className='relative pb-7'>
+        {image && <div className='imageContainer'>
             <Image
                 loading="lazy"
                 placeholder="blur"
-                blurDataURL='https://images.unsplash.com/photo-1639422839168-ba0bd0d21d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80'
-                src="https://images.unsplash.com/photo-1639422839168-ba0bd0d21d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+                blurDataURL={image}
+                src={image}
                 layout='fill'
                 alt="podcast-Image"
             />
 
-        </div>
+        </div>}
         <div className='bottom'>
             <p className='podcastTitle'>
-                Lorem ipsum dolor sit amet, consectetur
+                {ReactHtmlParser(title)}
             </p>
             <p className='podcastDescription'>
-                Lorem ipsum dolor sit amet, consec
+                {ReactHtmlParser(detail)}
             </p>
-            <DateComponent date={`${new Date().toISOString}`} />
+            <div className='absolute bottom-2'>
+                <DateComponent date={date} />
+
+            </div>
         </div>
     </PodcastCardContainer>
 

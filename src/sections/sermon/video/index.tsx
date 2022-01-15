@@ -46,7 +46,6 @@ const SingleVideo = () => {
     const [error, setError] = useState<boolean>(false);
     useEffect(() => {
         getData({ token: '', update: true });
-        console.log(router.query.playlist)
         return () => {
         }
     }, [])
@@ -55,8 +54,6 @@ const SingleVideo = () => {
 
     const getData = async ({ token, update = false }: { token: string, update?: boolean }) => {
         setLoading(true);
-        console.log(router.asPath.split("?playlist=")[1]);
-        console.log(`https://www.googleapis.com/youtube/v3/playlistItems?&playlistId=${router.asPath.split("?playlist=")[1]}&key=${process.env.NEXT_PUBLIC_YOUTUBEAPIKEY}&maxResults=${maxAmount}&part=snippet${token ? '&pageToken=' + token : ''}`);
         try {
             const res = await axios({
                 method: 'get',

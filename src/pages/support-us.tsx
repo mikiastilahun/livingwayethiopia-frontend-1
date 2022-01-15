@@ -5,19 +5,18 @@ import { request, gql } from 'graphql-request';
 import { SupportUsEntity } from '../types/strapi';
 
 const SupportUs = ({ supportUs }: { supportUs: SupportUsEntity }) => {
-    console.log()
-    return (
-        <Layout>
-            <SupportUsContainer supportUs={supportUs} />
-        </Layout>
-    )
+  return (
+    <Layout>
+      <SupportUsContainer supportUs={supportUs} />
+    </Layout>
+  )
 }
 
 export default SupportUs
 
 
 export async function getStaticProps({ }) {
-    const query = gql`
+  const query = gql`
     query Query($locale: I18NLocaleCode) {
       supportUs(locale: $locale) {
         data {
@@ -73,15 +72,15 @@ export async function getStaticProps({ }) {
         
     `
 
-    const variables = {
-        "locale": process.env.NEXT_PUBLIC_LANGUAGE,
-    }
-    const data = await request(
-        process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
-    return {
-        props: {
-            supportUs: data.supportUs.data,
-        },
-        revalidate: 3600,
-    };
+  const variables = {
+    "locale": process.env.NEXT_PUBLIC_LANGUAGE,
+  }
+  const data = await request(
+    process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
+  return {
+    props: {
+      supportUs: data.supportUs.data,
+    },
+    revalidate: 3600,
+  };
 }

@@ -16,7 +16,7 @@ const AudioData = () => {
         date: new Date(),
         image: "https://images.unsplash.com/photo-1641176313810-da6228b716e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80",
         detail: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the mm ipsum dolor sit amet.., comes from a line in section 1.10.32 ",
-        audio: "https://www.harlancoben.com/audio/NSC_.mp3"
+        audio: "https://anchor.fm/abel-lamesgen/episodes/title-e1d0f5q"
     };
     return (
         <AudioContainer className='mt-20' >
