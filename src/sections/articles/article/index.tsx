@@ -45,7 +45,7 @@ const ArticleSection = ({ article }: { article: ArticleEntity }) => {
                     </span>, by The Church
                 </p>
                 <div className='relative w-auto imageData'>
-                    <Image
+                    {data.image! && <Image
                         className='rounded-xl'
                         loading="lazy"
                         placeholder="blur"
@@ -53,7 +53,7 @@ const ArticleSection = ({ article }: { article: ArticleEntity }) => {
                         src={process.env.NEXT_PUBLIC_STRAPI_ENDPOINT + data.image!}
                         layout='fill'
                         alt="podcast-Image"
-                    />
+                    />}
                 </div>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} className='text-lg font-extralight font-sans mt-2 mb-4 px-3 md:px-5 bodyText'>
                     {data.text as string}

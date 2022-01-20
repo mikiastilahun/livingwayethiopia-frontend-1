@@ -6,17 +6,19 @@ import Navigation from '../../../components/navigation';
 import dayjs from "dayjs";
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import { theme } from '../../../styles/theme';
+import { EpisodeType } from '../../../types/custom';
+import ReactHtmlParser from 'react-html-parser';
 dayjs.extend(LocalizedFormat)
 
 
 
-const AudioData = () => {
+const AudioData = ({ episode }: { episode: EpisodeType }) => {
     const data = {
-        title: "Title",
-        date: new Date(),
-        image: "https://images.unsplash.com/photo-1641176313810-da6228b716e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80",
-        detail: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the mm ipsum dolor sit amet.., comes from a line in section 1.10.32 ",
-        audio: "https://anchor.fm/abel-lamesgen/episodes/title-e1d0f5q"
+        title: episode?.title,
+        date: episode?.pubDate,
+        image: episode?.itunes?.image,
+        audio: episode?.enclosure.url,
+        description: episode?.itunes?.summary,
     };
     return (
         <AudioContainer className='mt-20' >
@@ -33,14 +35,15 @@ const AudioData = () => {
                 </p>
                 <div className='w-auto mx-0 lg:mx-20'>
                     <div className='relative overflow-hidden imageData' style={{ width: "100%", background: theme.colors.background, borderTopLeftRadius: 9, borderTopRightRadius: 9 }}>
-                        <Image
-                            loading="lazy"
-                            placeholder="blur"
-                            blurDataURL={data.image}
-                            src={data.image}
-                            layout='fill'
-                            alt="podcast-Image"
-                        />
+                        {data.image &&
+                            <img
+                                loading="lazy"
+                                placeholder="blur"
+                                src={data.image}
+                                className="imageData"
+                                alt="podcast-Image"
+                            />
+                        }
                     </div>
                     <div className='w-auto py-5 px-0 sm:px-2' style={{ background: theme.colors.background, borderBottomLeftRadius: 9, borderBottomRightRadius: 9 }}>
                         <audio controls style={{ width: "100%", borderRadius: 0, }}>
@@ -50,7 +53,8 @@ const AudioData = () => {
                     </div>
                 </div>
                 <p className='text-lg font-extralight font-sans mb-4 px-3 md:px-5 bodyText mt-5'  >
-                    {data.detail}
+                    {ReactHtmlParser(data.description)}
+
                 </p>
             </div>
         </AudioContainer>

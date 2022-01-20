@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 const ArticleCard = ({ article }: { article: ArticleEntity }) => {
     const router = useRouter();
     return <CardContainer onClick={() => {
-        router.push(`articles/${article.id}`, undefined, { scroll: false, shallow: true })
+        router.push(`articles/${article.id}`, undefined, { shallow: true })
     }}>
         <div className='imageContainer'>
             <Image

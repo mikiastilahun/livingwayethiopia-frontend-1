@@ -7,7 +7,6 @@ module.exports = {
             "cms.livingwayethiopia.com",
             "img.youtube.com",
             "i.ytimg.com",
-            "d3t3ozftmdmh3i.cloudfront.net",
         ],
     },
 };

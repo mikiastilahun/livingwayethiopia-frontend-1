@@ -9,7 +9,7 @@ export default function Navigation({ routeData }: { routeData: string }) {
         <SvgContainer>
             <div className='w-auto flex justify-between align-middle  sm:px-5 md:px-10' >
                 <div className='flex gap-3 align-middle justify-center left' onClick={() => {
-                    router.replace(`${routeData}`, undefined, { scroll: false, shallow: true })
+                    router.replace(`${routeData}`, undefined, { shallow: true })
 
                 }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

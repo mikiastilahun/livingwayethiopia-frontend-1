@@ -5,29 +5,25 @@ import DateComponent from '../../dateComponent';
 import ReactHtmlParser from 'react-html-parser';
 
 const PodcastCard = ({ image, description, title, date }: { image?: string, description: string, title: string, date: string, }) => {
-    let detail = description.slice(0, 100) + (description.length > 100 ? "..." : "");
+    let detail = description?.slice(0, 100) + (description?.length > 100 ? "..." : "");
     return <PodcastCardContainer className='relative pb-7'>
-        {image && <div className='imageContainer'>
-            <Image
+        {image &&
+            <img
+                src={image}
+                className="imageData"
                 loading="lazy"
                 placeholder="blur"
-                blurDataURL={image}
-                src={image}
-                layout='fill'
                 alt="podcast-Image"
-            />
-
-        </div>}
+            />}
         <div className='bottom'>
             <p className='podcastTitle'>
                 {ReactHtmlParser(title)}
             </p>
-            <p className='podcastDescription'>
+            <div className='podcastDescription mb-1'>
                 {ReactHtmlParser(detail)}
-            </p>
+            </div>
             <div className='absolute bottom-2'>
                 <DateComponent date={date} />
-
             </div>
         </div>
     </PodcastCardContainer>
