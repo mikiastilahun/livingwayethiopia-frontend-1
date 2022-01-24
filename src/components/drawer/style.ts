@@ -66,10 +66,11 @@ export const MidDrawerContainer = styled.div`
 
 export const BottomDrawerContainer = styled.div`
   width: 100%;
-  grid-row: 100/106;
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
+  position: absolute;
+  bottom: 0;
   justify-content: space-between;
 `;

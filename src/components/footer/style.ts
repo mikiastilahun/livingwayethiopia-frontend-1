@@ -17,7 +17,6 @@ export const FooterContainer = styled.div`
   .bottom {
     width: 100%;
     align-self: flex-end;
-
     p {
       font-size: 14px;
       line-height: 18px;
@@ -40,6 +39,7 @@ export const FooterContainer = styled.div`
     margin-bottom: 20px;
     margin-top: 20px;
     justify-self: center;
+    z-index: 1;
     border: 1px solid ${theme.colors.border_color};
   }
 `;

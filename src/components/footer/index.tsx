@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import MapDisplay from './map';
 import Image from "next/image";
 import { FooterContainer, MapContainer, TextContainer } from './style';
+import LangDropdown from '../local';
 
 const Footer = () => {
     return <FooterContainer>
@@ -79,10 +80,15 @@ const Footer = () => {
             </TextContainer>
         </div>
         <div className="divider" />
-        <div className="bottom">
-            <p>
-                Copyright © {new Date().getFullYear()}, Living way Ethiopia
-            </p>
+        <div className="bottom flex w-full flex-wrap justify-between items-center gap-x-10 gap-y-2">
+            <div>
+                <p>
+                    Copyright © {new Date().getFullYear()}, Living way Ethiopia
+                </p>
+            </div>
+            <div>
+                <LangDropdown />
+            </div>
         </div>
     </FooterContainer>
 

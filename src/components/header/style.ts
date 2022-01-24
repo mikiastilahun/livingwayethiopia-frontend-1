@@ -103,8 +103,6 @@ export const ButtonNav = styled.div`
     border-radius: 15px;
   }
   .buttonContainer {
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 5px;
     display: flex;
     justify-content: center;
