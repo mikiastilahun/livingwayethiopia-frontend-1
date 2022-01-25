@@ -38,7 +38,10 @@ export async function getStaticPaths() {
     }))
 
     // We'll pre-render only these paths at build time.
-    return { paths, fallback: true }
+    return {
+        paths,
+        fallback: true,
+    }
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
@@ -67,13 +70,19 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
     const variables = {
         "id": params.id,
     };
-
-    const data = await request(process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
-
-    return {
-        props: {
-            article: data.article.data,
-        },
-        revalidate: 3600,
-    };
+    try {
+        const res = await request(process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
+        return {
+            props: {
+                article: res.article.data,
+            },
+            revalidate: 3600,
+        };
+    } catch {
+        return {
+            redirect: {
+                destination: "/articles",
+            },
+        }
+    }
 }

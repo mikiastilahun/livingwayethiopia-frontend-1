@@ -66,12 +66,15 @@ export const SubscriptionBox = styled.div`
 `;
 
 export const SubscriptionFormInput = styled.input`
-  min-width: 300px;
-  width: 35%;
+  width: 300px;
   height: 55px;
+  @media (min-width: 520px) {
+    width: 400px;
+  }
   border: 0px;
   background-color: #eff3f7;
   padding-left: 20px;
+  padding-right: 20px;
   border-radius: ${theme.boarder.radius}px;
   font-style: normal;
   font-weight: normal;

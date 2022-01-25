@@ -5,6 +5,9 @@ import { useNavBar } from '../../contexts/navbar';
 import LogoContainer from '../logo';
 import { theme } from '../../styles/theme';
 import { useRouter } from 'next/router';
+import LangDropdown from '../local';
+import { ButtonNav } from '../header/style';
+import Image from "next/image";
 
 
 
@@ -89,7 +92,18 @@ const Drawer = () => {
                 </div>
 
             </MidDrawerContainer>
-            <BottomDrawerContainer />
+            <BottomDrawerContainer className='flex flex-wrap justify-center  py-2 px-2 '>
+                {false ? <ButtonNav  >
+                    <button className='buttonContainer'>
+                        Live
+                        <div style={{ width: 18, height: 18 }}>
+                            <Image loading="eager" width={18} height={18} src="/icons/live.svg" alt="live" />
+                        </div>
+                    </button>
+                </ButtonNav> : <div />}
+                <LangDropdown />
+
+            </BottomDrawerContainer>
         </MainContainer>
     );
 }

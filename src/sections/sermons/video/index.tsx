@@ -86,7 +86,7 @@ const VideoList = () => {
                 <div className='videoListBottom '>
                     {videos?.map((item: dataType, index: number) => {
                         return <div key={index} className='videoCard' onClick={() => {
-                            router.push(`sermon/video?playlist=${item.id}`, undefined, { scroll: false, shallow: true })
+                            router.push(`sermon/video?playlist=${item.id}`, undefined, { shallow: true })
                         }}>
                             <VideoCard data={{
                                 image: item.snippet.thumbnails.high.url,

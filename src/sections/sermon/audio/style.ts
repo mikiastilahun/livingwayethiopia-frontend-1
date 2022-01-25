@@ -16,6 +16,9 @@ export const AudioContainer = styled.div`
 
   .imageData {
     height: 500px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
     @media (max-width: ${theme.breakpoints.SMd}px) {
       height: 300px;
     }

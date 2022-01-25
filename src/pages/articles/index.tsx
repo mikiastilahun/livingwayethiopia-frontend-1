@@ -47,10 +47,6 @@ export async function getStaticProps({ }) {
 
     const variables = {
         "locale": process.env.NEXT_PUBLIC_LANGUAGE,
-        "pagination": {
-            "page": 1,
-            "pageSize": 100
-        }
     }
     const data = await request(
         process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_ENDPOINT!, query, variables)
